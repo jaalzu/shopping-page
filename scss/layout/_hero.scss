@@ -1,0 +1,12 @@
+@use '../utils/variables' as vars;
+
+
+.hero{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+    padding-inline: vars.$padding-inline-hero-mobile;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}

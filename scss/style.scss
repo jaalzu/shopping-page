@@ -1,15 +1,12 @@
-@import '../scss/utils/variables';
+@use 'utils/variables';
+@use 'utils/mixins';
+@use 'base/reset' ;
+@use 'base/typography' ;
+@use 'components/buttons';
+@use 'layout/hero';
+@use 'layout/nav';
+@use 'layout/footer';
+@use 'sections/cart';
+@use 'sections/main';
+@use 'sections/product';
 
-
-@import '../scss/base/reset';
-@import '../scss/base/typography';
-
-@import '../scss/components/buttons';
-
-@import '../scss/layout/nav';
-@import '../scss/layout/header';
-@import '../scss/layout/footer';
-
-@import '../scss/sections/main';
-@import '../scss/sections/cart';
-@import '../scss/sections/product';

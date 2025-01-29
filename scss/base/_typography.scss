@@ -1,12 +1,14 @@
+@use '../utils/variables' as vars;
+
 h1,h2,h3{
-    font-family: $ff-primary;
+    font-family: vars.$ff-primary;
 }
 
 p,a,span{
-    font-family: $ff-secondary;
+    font-family: vars.$ff-secondary;
 }
 
 .primary-font{
-    font-family: $ff-primary;
+    font-family: vars.$ff-primary;
     text-decoration: none;
 }
