@@ -5,3 +5,21 @@
     list-style: none;
 }
 
+a{
+    text-decoration: none;
+}
+
+body{
+    background-image: url(/public/images/background_image/bg_chrome.webp);
+    height: auto;
+}
+
+img{
+    width: auto;
+    height: auto;
+}
+
+.icon__nav img{
+    width: 30px;
+    height: 30px;
+}
