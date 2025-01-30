@@ -1,4 +1,5 @@
 @use '../utils/variables' as vars;
+@use '../utils/mixins' as mixin;
 
 
 .hero{
@@ -31,3 +32,37 @@
             }
         }
 }
+
+
+@include mixin.responsive(tablet){
+    .hero{
+        flex-direction: row;
+        padding-top: 5rem;
+        .hero__img{
+            img{
+                width: 300px;
+            }
+        }
+        .hero__description{
+            display: flex;
+            align-items: center;
+        }
+    }
+}
+
+@include mixin.responsive(desktop){
+    .hero{
+        max-width: 1000px;
+        margin: 0 auto;
+        .hero__description{
+            p{
+                font-size: 1.060rem;
+
+                span{
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    }
+    
+    }
