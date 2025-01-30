@@ -244,5 +244,10 @@ nav .desktop {
     gap: 2rem;
   }
 }
+@media (min-width: 834px) {
+  .products {
+    padding-inline: 103px;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */

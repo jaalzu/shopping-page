@@ -63,3 +63,10 @@
         }
     }
 }
+
+@include mixin.responsive(tablet){
+    .products{
+        padding-inline: vars.$padding-inline-main-desktop;
+    }
+    
+}
