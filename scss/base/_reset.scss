@@ -3,6 +3,8 @@
     margin: 0;
     box-sizing: border-box;
     list-style: none;
+    font-size: 1rem;
+
 }
 
 a{
@@ -11,6 +13,11 @@ a{
 
 body{
     background-image: url(/public/images/background_image/bg_chrome.webp);
+    height: auto;
+}
+
+section{
+    width: 100%;
     height: auto;
 }
 

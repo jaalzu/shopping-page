@@ -1,0 +1,65 @@
+@use '../utils/variables' as vars;
+@use '../utils/mixins' as mixin;
+
+
+.products{
+    padding-inline: vars.$padding-inline-main-mobile;
+    
+    h2{
+        font-size: 3rem;
+        font-weight: vars.$fw-regular;
+        margin-bottom: 1.5rem;
+    }
+
+    .products__grid{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); // Ancho mínimo de 280px
+            justify-content: center;
+            column-gap: 2rem;
+            row-gap: 3rem;
+        justify-items: center; // Centra las tarjetas dentro de cada columna
+
+
+        .product__card{
+            @include mixin.flex-center();
+            flex-direction: column;
+            width: 100%;
+            border-radius: 1px;
+
+            .product__img{
+                @include mixin.flex-center();
+                padding: 1rem;
+                width: 100%;
+                img{
+                    width: 204px;
+                }
+            }
+            .product__description{
+                @include mixin.flex-center();
+                flex-direction: column;
+
+                span{
+                    font-size: 1.5rem;
+                    font-weight: vars.$fw-bold;
+                }
+                p{
+                    font-size: 1.1rem;
+                    margin-bottom: 1.1rem;
+                }
+                a{
+                    margin-bottom: 1.7rem;
+                    font-weight: vars.$fw-bold;
+                }
+            }
+        }
+    }
+}
+
+
+@include mixin.responsive(tablet){
+    .products{
+        .products__grid{
+            gap: 2rem;
+        }
+    }
+}

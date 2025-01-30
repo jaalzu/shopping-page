@@ -1,0 +1,18 @@
+@use '../utils/variables' as vars;
+
+.button{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: vars.$secondary-color;
+    border-radius: 1px;
+    color: vars.$white-color;
+    cursor: pointer;
+    font-size: .8rem;
+    transition: background-color .2s ease,opacity 0.3s ease;
+}
+.primary__button{
+    width: 157px;
+    height: 40px;
+}
