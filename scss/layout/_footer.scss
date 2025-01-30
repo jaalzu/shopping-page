@@ -1,0 +1,48 @@
+@use '../utils/variables' as vars;
+@use '../utils/mixins' as mixin;
+
+footer{
+    padding-inline: vars.$padding-inline-footer-mobile;
+    @include mixin.flex-center();
+    flex-direction: column;
+    nav{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        .footer__flex{
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-bottom: 3rem;
+            
+            a{
+                font-size: 1.3rem;
+                font-family: vars.$ff-primary;
+                color: vars.$secondary-color;
+            }
+        }
+    }
+    .copyright{
+        p{
+            font-size: .8rem;
+        }
+    }
+}
+
+
+@include mixin.responsive(desktop){
+    footer{
+        max-width: 1050px;
+        margin-inline: auto;
+
+        nav{
+            gap: 3rem;
+            .footer__flex{
+                a{
+                    font-size: 1.6rem;
+                }
+            }
+        }
+    }
+}
