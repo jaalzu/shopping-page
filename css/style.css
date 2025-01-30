@@ -2,7 +2,6 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  list-style: none;
   font-size: 1rem;
 }
 
@@ -48,17 +47,22 @@ p, a, span {
   align-items: center;
   justify-content: center;
   width: 100%;
-  background-color: #000000;
-  border-radius: 1px;
-  color: #fff;
+  background-color: transparent;
+  border: 4px dotted #000000;
+  border-radius: 3px;
+  color: #000000;
   cursor: pointer;
-  font-size: 0.8rem;
+  font-size: 1.2rem;
   transition: background-color 0.2s ease, opacity 0.3s ease;
+}
+.button:hover {
+  background-color: #000000;
+  color: #fff;
 }
 
 .primary__button {
-  width: 157px;
-  height: 40px;
+  width: 257px;
+  height: 50px;
 }
 
 .hero {
@@ -286,6 +290,121 @@ footer .copyright p {
 @media (min-width: 834px) {
   .products {
     padding-inline: 103px;
+  }
+}
+.showcase {
+  width: 100%;
+  flex-direction: column;
+  padding-inline: 50px;
+  padding-top: 2rem;
+  padding-bottom: 5rem;
+}
+.showcase .showcase__flex {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.showcase .showcase__flex .showcase__img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+.showcase .showcase__flex .showcase__img img {
+  width: 330px;
+}
+.showcase .showcase__flex .showcase__img .showcase__buttons {
+  display: flex;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  gap: 1rem;
+}
+.showcase .showcase__flex .showcase__img .showcase__buttons p {
+  font-size: 2.4rem;
+}
+.showcase .showcase__flex .showcase__img .showcase__buttons p:nth-last-child(1) {
+  color: grey;
+}
+.showcase .showcase__flex .showcase__description {
+  text-align: center;
+}
+.showcase .showcase__flex .showcase__description .showcase__title {
+  margin-bottom: 2rem;
+}
+.showcase .showcase__flex .showcase__description .showcase__title h2 {
+  font-size: 2.6rem;
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+.showcase .showcase__flex .showcase__description .showcase__title p {
+  font-size: 1.4rem;
+}
+.showcase .showcase__flex .showcase__description .showcase__sizes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+  gap: 1rem;
+}
+.showcase .showcase__flex .showcase__description .showcase__sizes .sizes {
+  border: 1px solid #000000;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+}
+.showcase .showcase__flex .showcase__button {
+  margin-bottom: 3.5rem;
+}
+.showcase .showcase__details h3 {
+  font-size: 2rem;
+  text-align: start;
+  margin-bottom: 1.5rem;
+}
+.showcase .showcase__details ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+  text-align: start;
+  column-gap: 3rem;
+  row-gap: 1rem;
+}
+.showcase .showcase__details ul li {
+  font-size: 1.1rem;
+}
+
+@media (min-width: 834px) {
+  .showcase .showcase__details h3 {
+    font-size: 2.1rem;
+  }
+  .showcase .showcase__details ul li {
+    font-size: 1.2rem;
+  }
+}
+@media (min-width: 1100px) {
+  .showcase .showcase__flex {
+    max-width: 800px;
+    margin-inline: auto;
+    flex-direction: row;
+  }
+  .showcase .showcase__flex .showcase__description {
+    display: flex;
+    flex-direction: column;
+  }
+  .showcase .showcase__flex .showcase__description .showcase__title {
+    margin-bottom: 3.5rem;
+  }
+  .showcase .showcase__flex .showcase__description .showcase__title h2 {
+    font-size: 2.8rem;
+  }
+  .showcase .showcase__flex .showcase__button {
+    margin-bottom: 6rem;
   }
 }
 

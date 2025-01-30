@@ -1,0 +1,130 @@
+@use '../utils/variables' as vars;
+@use '../utils/mixins' as mixin;
+
+
+.showcase{
+    width: 100%;
+    flex-direction: column;
+    padding-inline: vars.$padding-inline-product-page-mobile;
+    padding-top: 2rem;
+    padding-bottom: 5rem;
+
+    .showcase__flex{
+            flex-direction: column;
+            @include mixin.flex-center();
+
+            .showcase__img{
+                @include mixin.flex-center();
+                flex-direction: column;
+                width: 100%;
+                height: 100%;
+                img{
+                    width: 330px;
+                }
+
+                .showcase__buttons{
+                    display: flex;
+                    padding-top: 2rem;
+                    padding-bottom: 1rem;
+                    gap: 1rem;
+
+                    p{
+                        font-size: 2.4rem;
+                        &:nth-last-child(1){
+                            color: grey;
+                        }
+                    }
+                }
+            }
+
+            .showcase__description{
+                text-align: center;
+                .showcase__title{
+                    margin-bottom: 2rem;
+                    h2{
+                        font-size: 2.6rem;
+                        margin-bottom: 1rem;
+                        font-weight: 400;
+                    }
+                    p{
+                        font-size: 1.4rem;
+                    }
+                }
+                .showcase__sizes{
+                    @include mixin.flex-center();
+                    margin-bottom: 2rem;
+                    gap: 1rem;
+                    .sizes{
+                        border: 1px solid vars.$secondary-color;
+                        width: 30px;
+                        height: 30px;
+                        border-radius: 50%;
+                        @include mixin.flex-center();
+                        font-weight: vars.$fw-bold;
+                    }
+                }
+            }
+            .showcase__button{
+                margin-bottom: 3.5rem;
+            }
+
+        }
+        .showcase__details{
+            h3{
+                font-size: 2rem;
+                text-align: start;
+                margin-bottom: 1.5rem;
+            }
+            ul{
+                display: grid;
+                grid-template-columns: repeat(2,1fr);
+                width: 100%;
+                text-align: start;
+                column-gap: 3rem;
+                row-gap: 1rem;
+                li{
+                    font-size: 1.1rem;
+                }
+            }
+        }
+}
+
+
+@include mixin.responsive(tablet){
+    .showcase{
+        .showcase__details{
+            h3{
+                font-size: 2.1rem;
+            }
+            ul{
+                li{
+                    font-size: 1.2rem;
+                }
+            }
+        }
+    }
+}
+
+@include mixin.responsive(desktop){
+    .showcase{
+        .showcase__flex{
+            max-width: 800px;
+            margin-inline: auto;
+            flex-direction: row;
+
+            .showcase__description{
+                display: flex;
+                flex-direction: column;
+                .showcase__title{
+                    margin-bottom: 3.5rem;
+                    h2{
+                        font-size: 2.8rem;
+                    }
+                }
+            }
+            .showcase__button{
+                margin-bottom: 6rem;
+            }
+        }
+    }
+}
