@@ -29,10 +29,12 @@
                     gap: 1rem;
 
                     p{
-                        font-size: 2.4rem;
-                        &:nth-last-child(1){
-                            color: grey;
-                        }
+                        font-size: 2.8rem;
+                        color: grey;
+                    }
+
+                    .activeBtn{
+                       color: vars.$secondary-color;
                     }
                 }
             }
@@ -61,6 +63,14 @@
                         border-radius: 50%;
                         @include mixin.flex-center();
                         font-weight: vars.$fw-bold;
+                        cursor: pointer;
+                        &:hover{
+                            background-color: grey;
+                        }
+
+                        &.active{
+                            background-color: grey;
+                        }
                     }
                 }
             }
@@ -68,6 +78,11 @@
                 margin-bottom: 3.5rem;
             }
 
+            .goBack{
+                padding-top: 5rem;
+                color: vars.$secondary-color;
+                text-decoration: underline;
+            }
         }
         .showcase__details{
             h3{

@@ -323,10 +323,11 @@ footer .copyright p {
   gap: 1rem;
 }
 .showcase .showcase__flex .showcase__img .showcase__buttons p {
-  font-size: 2.4rem;
-}
-.showcase .showcase__flex .showcase__img .showcase__buttons p:nth-last-child(1) {
+  font-size: 2.8rem;
   color: grey;
+}
+.showcase .showcase__flex .showcase__img .showcase__buttons .activeBtn {
+  color: #000000;
 }
 .showcase .showcase__flex .showcase__description {
   text-align: center;
@@ -358,9 +359,21 @@ footer .copyright p {
   justify-content: center;
   align-items: center;
   font-weight: 700;
+  cursor: pointer;
+}
+.showcase .showcase__flex .showcase__description .showcase__sizes .sizes:hover {
+  background-color: grey;
+}
+.showcase .showcase__flex .showcase__description .showcase__sizes .sizes.active {
+  background-color: grey;
 }
 .showcase .showcase__flex .showcase__button {
   margin-bottom: 3.5rem;
+}
+.showcase .showcase__flex .goBack {
+  padding-top: 5rem;
+  color: #000000;
+  text-decoration: underline;
 }
 .showcase .showcase__details h3 {
   font-size: 2rem;
