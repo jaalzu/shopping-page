@@ -30,7 +30,7 @@
 
                     p{
                         font-size: 2.8rem;
-                        color: grey;
+                        color: vars.$grey-color;
                     }
 
                     .activeBtn{
@@ -65,11 +65,11 @@
                         font-weight: vars.$fw-bold;
                         cursor: pointer;
                         &:hover{
-                            background-color: grey;
+                            background-color: vars.$grey-color;
                         }
 
                         &.active{
-                            background-color: grey;
+                            background-color: vars.$grey-color;
                         }
                     }
                 }
