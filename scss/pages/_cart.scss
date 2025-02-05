@@ -29,10 +29,12 @@
                     font-size: 1.7rem;
                 }
                 .close__btn{
-                    color: vars.$secondary-color;
-                    position: absolute;
-                    right: 3%;
-                    top: 13%;
+                    img{
+                        width: 20px;
+                        position: absolute;
+                        right: 3%;
+                        top: 10%;
+                    }
                 }
             }
             .cart__img{
@@ -59,6 +61,8 @@
                 input{
                     height: 33px;
                     width: 68px;
+                    text-align: center;
+                    font-family: vars.$ff-secondary;
                 }
             }
         }
@@ -137,8 +141,9 @@
                     font-size: 1.8rem;
                 }
                 .close__btn{
-                    font-size: 1.2rem;
-                    top: 2%;
+                    img{
+                        top: 0%;
+                    }
                 }
             }
             .cart__img{
@@ -164,5 +169,16 @@
     .cart{
         max-width: 1200px;
         margin-inline: auto;
+        .cart__flex{
+            display: flex;
+            justify-content: space-between;
+            gap: 3rem;
+            .cart__container{
+                width: 65%;
+            }
+            .cart__total{
+                width: 35%;
+            }
+        }
     }
 }

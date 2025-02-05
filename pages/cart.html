@@ -32,24 +32,24 @@
 <section class="cart">
     <h2>Carrito de compras</h2>
     <div class="cart__flex">
-     <div class="cart__container">
+     <div class="cart__container" id="cart-container">
         <div class="cart__title">
-            <h3 id="item-title">t-shirt shitoff</h3>
-            <a href="" class="close__btn">X</a>
-            <div class="cart__img">
+            <h3 id="item-cart-title">t-shirt shitoff</h3>
+            <a href="" class="close__btn"><img src="/public/images/icons/xmark-solid.svg" alt=""></a>
+            <div class="cart__img" id="item-cart-img">
                 <img src="/public/images/products/jacket-1.webp" alt="">
             </div>
-            <div class="cart__price"><p id="article-cart-price">$38500 <span>x</span> <input type="number"></p>
+            <div class="cart__price"><p id="article-cart-price"> <span>x</span> <input type="number"></p>
             </div>
         </div>
     </div>
     <div class="cart__total">
         <div class="cart__value">
             <p>Total:</p>
-            <span id="cart-total">$39.300</span>
+            <span id="cart-total">$</span>
         </div>
         <div class="cart__button">
-            <a href="#" class="button primary__button">Realizar comprar</a>
+            <a href="#" class="button primary__button " id="checkout-btn">Realizar comprar</a>
             <p class="buy__description">By continuing to checkout, I agree to the Terms & Conditions, I have read the Privacy Policy and the Returns Policy Continue Shopping</p>
             <a href="../index.html">Ver mas productos</a>
         </div>

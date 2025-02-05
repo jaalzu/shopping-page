@@ -446,11 +446,11 @@ footer .copyright p {
 .cart .cart__flex .cart__container .cart__title h3 {
   font-size: 1.7rem;
 }
-.cart .cart__flex .cart__container .cart__title .close__btn {
-  color: #000000;
+.cart .cart__flex .cart__container .cart__title .close__btn img {
+  width: 20px;
   position: absolute;
   right: 3%;
-  top: 13%;
+  top: 10%;
 }
 .cart .cart__flex .cart__container .cart__img {
   width: 100%;
@@ -474,6 +474,8 @@ footer .copyright p {
 .cart .cart__flex .cart__container .cart__price input {
   height: 33px;
   width: 68px;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
 }
 .cart .cart__flex .cart__total {
   display: flex;
@@ -542,9 +544,8 @@ footer .copyright p {
   .cart .cart__flex .cart__container .cart__title h3 {
     font-size: 1.8rem;
   }
-  .cart .cart__flex .cart__container .cart__title .close__btn {
-    font-size: 1.2rem;
-    top: 2%;
+  .cart .cart__flex .cart__container .cart__title .close__btn img {
+    top: 0%;
   }
   .cart .cart__flex .cart__container .cart__img img {
     width: 100px;
@@ -560,6 +561,17 @@ footer .copyright p {
   .cart {
     max-width: 1200px;
     margin-inline: auto;
+  }
+  .cart .cart__flex {
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+  }
+  .cart .cart__flex .cart__container {
+    width: 65%;
+  }
+  .cart .cart__flex .cart__total {
+    width: 35%;
   }
 }
 
