@@ -1,6 +1,10 @@
 const productos = [
     {
-        id: 1,nombre: "t-shirt shit-off",imagenes: ["/public/images/products/t-shirt-1.webp","/public/images/products/t-shirt-1-back.webp"] ,precio: "$37.000",caracteristicas: ["100% cotton", "1/1 piece", "made in france"]
+        id: 1,
+        nombre: "t-shirt shit-off",
+        imagenes: ["/public/images/products/t-shirt-1.webp","/public/images/products/t-shirt-1-back.webp"] ,
+        precio: 37000,
+        caracteristicas: ["100% cotton", "1/1 piece", "made in france"]
     },
     {
         id: 2,
@@ -9,7 +13,7 @@ const productos = [
             "/public/images/products/t-shirt-2.webp",
             "/public/images/products/t-shirt-2-back.webp"
         ] ,
-        precio: "$32.000",
+        precio: 32000,
         caracteristicas: ["100% cotton", "1/1 piece", "made in france"]
     },
     {
@@ -19,7 +23,7 @@ const productos = [
             "/public/images/products/jacket-1.webp",
             "/public/images/products/jacket-1-back.webp"
         ] ,
-        precio: "$107.000",
+        precio: 107000,
         caracteristicas: ["100% cotton", "1/1 piece", "made in france"]
     },
     {
@@ -29,7 +33,7 @@ const productos = [
             "/public/images/products/t-shirt-3.webp",
             "/public/images/products/t-shirt-3-back.webp"
         ] ,
-        precio: "$47.000",
+        precio: 47000,
         caracteristicas: ["100% cotton", "1/1 piece", "made in france"]
     },
     {
@@ -39,7 +43,7 @@ const productos = [
             "/public/images/products/jean.webp",
             "/public/images/products/jean-model.webp"
         ] ,
-        precio: "$87.000",
+        precio: 87000,
         caracteristicas: ["100% cotton", "1/1 piece", "made in france"]
     },
     {
@@ -49,7 +53,7 @@ const productos = [
             "/public/images/products/jacket-2.webp",
             "/public/images/products/jacket-2-model.webp"
         ] ,
-        precio: "$120.000",
+        precio: 120000,
         caracteristicas: ["100% cotton", "1/1 piece", "made in france"]
     },
     {
@@ -59,7 +63,7 @@ const productos = [
             "/public/images/products/t-shirt-4.webp",
             "/public/images/products/t-shirt-4-model.webp"
         ] ,
-        precio: "$50.000",
+        precio: 50000,
         caracteristicas: ["100% cotton", "1/1 piece", "made in france"]
     }
 ];
@@ -87,7 +91,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // Actualizar el contenido de la página
             productTitle.textContent = producto.nombre;
             imagenProducto.src = producto.imagenes[0];
-            productPrice.textContent = producto.precio;
+            productPrice.textContent = `$${producto.precio.toLocaleString()}`;
 
             listaCaracteristicas.innerHTML = producto.caracteristicas.map(car => `<li>${car}</li>`).join("");
         } else {
@@ -96,26 +100,30 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
       // Obtener o inicializar el carrito desde localStorage
-let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+            let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
 
         // Función para agregar el producto al carrito
         addToCartBtn.addEventListener('click', (e) => {
             e.preventDefault(); // Evita que el enlace redirija
             if (producto) {
-                carrito.push(producto); // Agrega el producto al array del carrito
+                const existingProductIndex = carrito.findIndex(p => p.id === producto.id);
+
+                if(existingProductIndex !== -1){
+                    carrito[existingProductIndex].cantidad += 1;
+                }else{
+                    producto.cantidad = 1;
+                    carrito.push(producto);
+                }
                 localStorage.setItem("carrito", JSON.stringify(carrito)); // Guarda en localStorage
                 console.log("Producto añadido:", producto);
+
             }
+
         });
     } else {
         console.error("El botón 'agregar al carrito' no se encuentra.");
     }
-
-
-
-
-
 
 
 
@@ -152,6 +160,7 @@ let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
     }
 });
 
+
 document.addEventListener("DOMContentLoaded", function () {
     const cartContainer = document.getElementById("cart-container");
     const cartTotal = document.getElementById("cart-total");
@@ -159,21 +168,18 @@ document.addEventListener("DOMContentLoaded", function () {
     let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
     function renderCart() {
-        cartContainer.innerHTML = ""; // Limpiar contenido previo
+        cartContainer.innerHTML = "";
 
         if (carrito.length === 0) {
             cartContainer.innerHTML = "<p>El carrito está vacío.</p>";
-            cartTotal.textContent = "$0";
+            cartTotal.textContent = "$0.00";
             return;
         }
 
-        let total = 0;
-
         carrito.forEach((producto, index) => {
-            total += producto.precio;
-
             const cartItem = document.createElement("div");
-            cartItem.classList.add("cart__item");
+            cartItem.classList.add("cart__container");
+
             cartItem.innerHTML = `
                 <div class="cart__title">
                     <h3>${producto.nombre}</h3>
@@ -185,35 +191,54 @@ document.addEventListener("DOMContentLoaded", function () {
                     <img src="${producto.imagenes[0]}" alt="${producto.nombre}">
                 </div>
                 <div class="cart__price">
-                    <p>${producto.precio} x <input type="number" value="1" min="1" class="cart-quantity" data-index="${index}"></p>
+                    <p>${producto.precio.toLocaleString()} x 
+                    <input class="cart-quantity" type="number" value="${producto.cantidad || 1}" min="1" data-index="${index}">
+                    </p>
                 </div>
             `;
+
             cartContainer.appendChild(cartItem);
         });
 
-        cartTotal.textContent = `$${total.toFixed(2)}`;
+        actualizarTotal();
 
-        // Agregar eventos para eliminar productos
+        // Eventos para eliminar productos
         document.querySelectorAll(".close__btn").forEach(btn => {
             btn.addEventListener("click", (e) => {
                 e.preventDefault();
                 const index = e.target.closest(".close__btn").dataset.index;
                 carrito.splice(index, 1);
-                localStorage.setItem("carrito", JSON.stringify(carrito));
+                guardarCarrito();
                 renderCart();
             });
         });
 
-        // Actualizar total cuando se cambie la cantidad
+        // Eventos para actualizar cantidad y total en tiempo real
         document.querySelectorAll(".cart-quantity").forEach(input => {
-            input.addEventListener("input", () => {
-                let newTotal = 0;
-                document.querySelectorAll(".cart-quantity").forEach((input, i) => {
-                    newTotal += carrito[i].precio * parseInt(input.value);
-                });
-                cartTotal.textContent = `$${newTotal.toFixed(2)}`;
+            input.addEventListener("change", (e) => {
+                const index = e.target.dataset.index;
+                let nuevaCantidad = parseInt(e.target.value);
+
+                // Validación para que la cantidad sea siempre mayor que 0
+                if (isNaN(nuevaCantidad) || nuevaCantidad < 1) {
+                    nuevaCantidad = 1; // Restablecer a 1 si el valor es inválido
+                    e.target.value = nuevaCantidad; // Actualizar el valor en el input
+                }
+
+                carrito[index].cantidad = nuevaCantidad;
+                guardarCarrito();
+                actualizarTotal();
             });
         });
+    }
+
+    function actualizarTotal() {
+        let total = carrito.reduce((acc, item) => acc + (item.precio * (item.cantidad || 1)), 0);
+        cartTotal.textContent = `$${total.toLocaleString()}`;
+    }
+
+    function guardarCarrito() {
+        localStorage.setItem("carrito", JSON.stringify(carrito));
     }
 
     renderCart();
