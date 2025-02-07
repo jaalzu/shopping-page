@@ -1,3 +1,5 @@
+
+// array de productos 
 const productos = [
     {
         id: 1,
@@ -78,14 +80,17 @@ document.addEventListener("DOMContentLoaded", function () {
     const productTitle = document.getElementById("product-title");
     const productPrice = document.getElementById("product-price")
     const listaCaracteristicas = document.getElementById("product-details");
-
-
     const addToCartBtn = document.getElementById("add-to-cart-btn");  // Elemento del botón
+    
+    const botonImagen1 = document.getElementById('boton-imagen-1');
+    const botonImagen2 = document.getElementById('boton-imagen-2');
+    // variable para allar el producto     
+    const producto = productos.find(p => p.id === productoId);
+
 
     // Verificar que el botón exista
     if (addToCartBtn) {
         // Buscar el producto en el array
-        const producto = productos.find(p => p.id === productoId);
 
         if (producto) {
             // Actualizar el contenido de la página
@@ -126,10 +131,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-
     // Cambiar la imagen del producto
-    const botonImagen1 = document.getElementById('boton-imagen-1');
-    const botonImagen2 = document.getElementById('boton-imagen-2');
+   
 
     if (botonImagen1 && botonImagen2) {
         botonImagen1.addEventListener("click", () => {
@@ -144,27 +147,13 @@ document.addEventListener("DOMContentLoaded", function () {
             botonImagen2.classList.add("activeBtn");
         });
     }
-
-    // Seleccionar tamaño
-    const sizes = document.querySelectorAll('.showcase__sizes .sizes');
-
-    sizes.forEach(size => {
-        size.addEventListener('click', function () {
-            sizes.forEach(s => s.classList.remove('active'));
-            this.classList.add('active');
-        });
-    });
-
-    if (sizes.length > 0) {
-        sizes[0].classList.add('active');
-    }
 });
 
 
 document.addEventListener("DOMContentLoaded", function () {
     const cartContainer = document.getElementById("cart-container");
     const cartTotal = document.getElementById("cart-total");
-
+    
     let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
     function renderCart() {

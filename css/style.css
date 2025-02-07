@@ -314,17 +314,18 @@ footer .copyright p {
   height: 100%;
 }
 .showcase .showcase__flex .showcase__img img {
+  height: 420px;
   width: 330px;
 }
 .showcase .showcase__flex .showcase__img .showcase__buttons {
   display: flex;
   padding-top: 2rem;
-  padding-bottom: 1rem;
   gap: 1rem;
 }
 .showcase .showcase__flex .showcase__img .showcase__buttons p {
   font-size: 2.8rem;
   color: grey;
+  cursor: pointer;
 }
 .showcase .showcase__flex .showcase__img .showcase__buttons .activeBtn {
   color: #000000;
@@ -453,7 +454,7 @@ footer .copyright p {
   font-size: 1.7rem;
 }
 .cart .cart__flex .cart__container .cart__title .close__btn img {
-  width: 20px;
+  width: 15px;
   position: absolute;
   right: 3%;
   top: 6%;
@@ -469,9 +470,11 @@ footer .copyright p {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 1rem;
 }
 .cart .cart__flex .cart__container .cart__price p {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   font-size: 1.4rem;
   color: #000000;
   font-weight: 700;
