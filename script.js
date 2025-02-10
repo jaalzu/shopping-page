@@ -71,6 +71,21 @@ const productos = [
 ];
 
 
+
+
+
+// funcion para actualizar la cantidad del carrito
+function actualizarCantidadCarrito(){
+    const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+    const cantidadTotal = carrito.reduce((acc,producto) => acc + (producto.cantidad || 1),0)
+    const cartBag = document.getElementById("cart-shopping-amount");
+
+    if(cartBag){
+        cartBag.textContent = cantidadTotal;
+    }
+}
+
+
 document.addEventListener("DOMContentLoaded", function () {
     // Obtener el ID del producto de la URL
     const urlParams = new URLSearchParams(window.location.search);
@@ -84,9 +99,12 @@ document.addEventListener("DOMContentLoaded", function () {
     
     const botonImagen1 = document.getElementById('boton-imagen-1');
     const botonImagen2 = document.getElementById('boton-imagen-2');
-    // variable para allar el producto     
+    // variable para hallar el producto     
     const producto = productos.find(p => p.id === productoId);
 
+
+// FUNCION PARA ACTUALIZAR LA CANTIDAD DE ARTICULOS EN EL CARRITO 
+  
 
     // Verificar que el botón exista
     if (addToCartBtn) {
@@ -123,6 +141,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 localStorage.setItem("carrito", JSON.stringify(carrito)); // Guarda en localStorage
                 console.log("Producto añadido:", producto);
 
+                actualizarCantidadCarrito()
             }
 
         });
@@ -130,10 +149,9 @@ document.addEventListener("DOMContentLoaded", function () {
         console.error("El botón 'agregar al carrito' no se encuentra.");
     }
 
+    actualizarCantidadCarrito()
 
     // Cambiar la imagen del producto
-   
-
     if (botonImagen1 && botonImagen2) {
         botonImagen1.addEventListener("click", () => {
             imagenProducto.src = producto.imagenes[0];
@@ -199,6 +217,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 carrito.splice(index, 1);
                 guardarCarrito();
                 renderCart();
+                actualizarCantidadCarrito(); // Actualizar el ícono del carrito
+
             });
         });
 
@@ -217,6 +237,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 carrito[index].cantidad = nuevaCantidad;
                 guardarCarrito();
                 actualizarTotal();
+                actualizarCantidadCarrito(); // Actualizar el ícono del carrito
+
             });
         });
     }

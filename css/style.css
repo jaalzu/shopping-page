@@ -140,6 +140,21 @@ nav .nav__menu {
 nav .desktop {
   display: none;
 }
+nav .icon__nav {
+  display: flex;
+  cursor: pointer;
+  position: relative;
+}
+nav .icon__nav .cart__shopping__amount {
+  position: absolute;
+  right: -30%;
+  top: -30%;
+  background-color: white;
+  color: black;
+  opacity: 0.9;
+  border-radius: 50%;
+  padding: 2px 5px;
+}
 
 @media (min-width: 834px) {
   nav {
@@ -440,7 +455,6 @@ footer .copyright p {
   border-top: 1px solid grey;
 }
 .cart .cart__flex .cart__container {
-  padding-top: 0.7rem;
   padding-bottom: 1rem;
   position: relative;
   display: flex;
@@ -449,6 +463,7 @@ footer .copyright p {
 }
 .cart .cart__flex .cart__container .cart__title {
   padding-bottom: 1rem;
+  padding-top: 1rem;
 }
 .cart .cart__flex .cart__container .cart__title h3 {
   font-size: 1.7rem;
@@ -492,7 +507,7 @@ footer .copyright p {
   display: flex;
   width: 100%;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   margin-bottom: 2.2rem;
 }
 .cart .cart__flex .cart__total .cart__value {
@@ -540,13 +555,10 @@ footer .copyright p {
   .cart .cart__flex {
     border-top: 1px solid grey;
     flex-direction: row;
-    justify-content: space-between;
     width: 100%;
-    padding-top: 1.4rem;
     gap: 3rem;
   }
   .cart .cart__flex .cart__container {
-    padding-block: 0rem;
     padding-bottom: 1.5rem;
     border-top: none;
     width: 100%;
@@ -556,7 +568,7 @@ footer .copyright p {
     font-size: 1.8rem;
   }
   .cart .cart__flex .cart__container .cart__title .close__btn img {
-    top: 0%;
+    top: 5%;
   }
   .cart .cart__flex .cart__container .cart__img img {
     width: 100px;
@@ -566,6 +578,7 @@ footer .copyright p {
   }
   .cart .cart__total {
     gap: 1rem;
+    padding-top: 1rem;
   }
 }
 @media (min-width: 1100px) {
@@ -573,16 +586,11 @@ footer .copyright p {
     max-width: 1200px;
     margin-inline: auto;
   }
-  .cart .cart__flex {
-    display: flex;
-    justify-content: space-between;
-    gap: 3rem;
-  }
   .cart .cart__flex .cart__container {
-    width: 65%;
+    width: 100%;
   }
   .cart .cart__flex .cart__total {
-    width: 35%;
+    width: 60%;
   }
 }
 

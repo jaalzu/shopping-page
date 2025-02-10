@@ -24,6 +24,22 @@ nav{
     .desktop{
         display: none;
     }
+
+    .icon__nav{
+        display: flex;
+        cursor: pointer;
+        position: relative;
+        .cart__shopping__amount{
+            position: absolute;
+            right: -30%;
+            top: -30%;
+            background-color: white;
+            color: black;
+            opacity: .9;
+            border-radius: 50%;
+            padding: 2px 5px;
+        }
+    }
 }
 
 
