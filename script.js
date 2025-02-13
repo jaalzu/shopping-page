@@ -90,12 +90,24 @@ function guardarCarrito() {
 
 // Función para actualizar el total del carrito
 function actualizarTotal() {
-    const cartTotal = document.getElementById("cart-total");
-    if (cartTotal) {
-        const total = carrito.reduce((acc, item) => acc + (item.precio * (item.cantidad || 1)), 0);
-        cartTotal.textContent = `$${total.toLocaleString()}`;
+    const cartTotals = document.querySelectorAll(".cart-total");
+    const shippingCostElement = document.getElementById("shipping-cost");
+
+    const subtotal = carrito.reduce((acc, item) => acc + (item.precio * (item.cantidad || 1)), 0);
+    const shippingCost = carrito.length > 0 ? 30 : 0; // Agrega el costo solo si hay productos en el carrito
+    const total = subtotal + shippingCost;
+
+    if (cartTotals.length > 0) {
+        cartTotals[0].textContent = `$${subtotal.toLocaleString()}`; // Subtotal
+        cartTotals[1].textContent = `$${total.toLocaleString()}`;    // Total con envío
+    }
+
+    if (shippingCostElement) {
+        shippingCostElement.textContent = `$${shippingCost}`;
     }
 }
+
+
 
 // Función para renderizar el carrito
 function renderCart() {
@@ -103,7 +115,7 @@ function renderCart() {
     if (!cartContainer) return;
 
     cartContainer.innerHTML = carrito.length === 0
-        ? "<p></p>"
+        ? '<p style="margin-top: 0.5rem; text-align: center; font-size: 1rem; color: #777;">Tu carrito está vacío</p>'
         : carrito.map((producto, index) => `
             <div class="cart__container">
                 <div class="cart__title">
@@ -185,10 +197,16 @@ function inicializarPaginaProducto() {
 
             if (existingProductIndex !== -1) {
                 carrito[existingProductIndex].cantidad += 1;
+
+                
             } else {
                 producto.cantidad = 1;
                 carrito.push(producto);
             }
+            addToCartBtn.textContent = "¡Añadido al carrito!";
+            setTimeout(() => {
+                addToCartBtn.textContent = "Agregar al carrito";
+            }, 2000)
 
             guardarCarrito();
             actualizarCantidadCarrito();

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>cart</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -45,17 +45,30 @@
     </div>
     <div class="cart__total">
         <div class="cart__value">
-            <p>Total:</p>
-            <span id="cart-total">$</span>
+            <div class="cart__value__box">
+                <p>Subtotal:</p>
+                <span  class="cart-total"></span>
+            </div>
+            <div class="cart__value__box">
+                <p>Taxes:</p>
+                <span>$0</span>
+            </div>
+            <div class="cart__value__box">
+                <p>Shipping:</p>
+                <span id="shipping-cost">$0</span>
+            </div>
+            <div class="cart__value__box">
+                <p>Total:</p>
+                <span  class="cart-total"></span>
+            </div>
         </div>
         <div class="cart__button">
             <a href="#" class="button primary__button " id="checkout-btn">Realizar comprar</a>
-            <p class="buy__description">By continuing to checkout, I agree to the Terms & Conditions, I have read the Privacy Policy and the Returns Policy Continue Shopping</p>
+            <p class="buy__description">By continuing to checkout, I agree to the <span>Terms & Conditions</span> , I have read the <span>Privacy Policy</span>  and the <span>Returns Policy</span> Continue Shopping</p>
             <a href="../index.html">Ver mas productos</a>
         </div>
     </div>
 </div>
-    
 </section>
 
 

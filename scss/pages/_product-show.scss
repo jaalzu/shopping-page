@@ -4,7 +4,6 @@
 
 .showcase{
     width: 100%;
-    flex-direction: column;
     padding-inline: vars.$padding-inline-product-page-mobile;
     padding-top: 2rem;
     padding-bottom: 5rem;
@@ -101,6 +100,14 @@
                     font-size: 1.1rem;
                 }
             }
+        }
+
+        .to__index{
+            display: flex;
+            justify-content: center;
+            margin-top: 4rem;
+            color: vars.$secondary-color;
+            text-decoration: underline;
         }
 }
 
