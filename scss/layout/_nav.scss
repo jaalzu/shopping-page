@@ -1,8 +1,8 @@
 @use '../utils/variables' as vars;
 @use '../utils/mixins' as mix;
 
-
-nav{
+// Estilos base para el nav
+nav {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -10,38 +10,129 @@ nav{
     padding-top: vars.$padding-top-nav-mobile;
     padding-inline: vars.$padding-inline-nav-mobile;
 
-    .logo{
+    .logo {
         font-size: 2.6rem;
         color: vars.$secondary-color;
     }
 
-    .nav__menu{
+    .nav__menu {
         display: flex;
         align-items: center;
         gap: 1.7rem;
+
+        // Estilos para el botón de cambio de tema
+        #theme-switch {
+            height: 50px;
+            width: 50px;
+            padding: 0;
+            border-radius: 50%;
+            background-color: gray;
+            outline: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            border: none;
+            justify-content: center;
+
+            img {
+                &:nth-last-child(1) {
+                    display: none; // Oculta el sol inicialmente
+                }
+            }
+        }
     }
 
-    .desktop{
+    .desktop {
         display: none;
     }
 
-    .icon__nav{
+    .icon__nav {
         display: flex;
         cursor: pointer;
         position: relative;
-        .cart__shopping__amount{
+
+        .cart__shopping__amount {
             position: absolute;
             right: -30%;
             top: -30%;
             background-color: white;
             color: black;
-            opacity: .9;
+            opacity: 0.9;
             border-radius: 50%;
             padding: 2px 5px;
         }
     }
 }
 
+// Estilos para el modo oscuro
+body.darkmode {
+    // Cambiar el ícono del botón de tema
+    #theme-switch {
+        img:first-child {
+            display: none; // Oculta la luna
+        }
+
+        img:nth-last-child(1) {
+            display: block; // Muestra el sol
+        }
+    }
+
+    // Cambiar la imagen del hero en modo oscuro
+    .hero__img {
+        .light-mode-img {
+            opacity: 0; // Oculta la imagen del modo claro
+        }
+
+        .dark-mode-img {
+            opacity: 1; // Muestra la imagen del modo oscuro
+        }
+    }
+}
+
+// Estilos para el modo claro
+body:not(.darkmode) {
+    // Cambiar el ícono del botón de tema
+    #theme-switch {
+        img:first-child {
+            display: block; // Muestra la luna
+        }
+
+        img:nth-last-child(1) {
+            display: none; // Oculta el sol
+        }
+    }
+
+    // Cambiar la imagen del hero en modo claro
+    .hero__img {
+        .light-mode-img {
+            opacity: 1; // Muestra la imagen del modo claro
+        }
+
+        .dark-mode-img {
+            opacity: 0; // Oculta la imagen del modo oscuro
+        }
+    }
+}
+
+// Estilos para las imágenes del hero
+.hero__img {
+    position: relative;
+    width: 100%;
+    height: auto;
+
+    img {
+        width: 100%;
+        height: auto;
+        transition: opacity 0.3s ease;
+    }
+
+    .dark-mode-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0; // Inicialmente oculta
+    }
+}
 
 
 
@@ -98,15 +189,6 @@ nav{
 
 
 
-
-
-
-
-        .desktop{
-            display: block;
-        }
-        .mobile{
-            display: none;
-        }
+       
             }
       }

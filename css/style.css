@@ -65,6 +65,89 @@ p, a, span {
   height: 50px;
 }
 
+.darkmode {
+  background-image: url(/public/images/background_image/bg_darkmode.png);
+  height: auto;
+}
+.darkmode nav .logo {
+  color: #fff;
+}
+.darkmode nav .icon__nav .cart__shopping__amount {
+  background-color: #fff;
+  color: #000000;
+}
+.darkmode nav .icon__nav img {
+  filter: invert(1); /* Esto invierte los colores de la imagen */
+}
+.darkmode .hero .hero__description p {
+  color: #cacaca;
+}
+.darkmode .products h2 {
+  color: #fff;
+}
+.darkmode .products .products__grid .product__card .product__description {
+  color: #cacaca;
+}
+.darkmode footer nav .footer__flex a {
+  color: #cacaca;
+}
+.darkmode footer .copyright p {
+  color: #fff;
+}
+.darkmode .showcase .showcase__flex .showcase__img .showcase__buttons p {
+  color: #fff;
+}
+.darkmode .showcase .showcase__flex .showcase__img .showcase__buttons .activeBtn {
+  color: red;
+}
+.darkmode .showcase .showcase__flex .showcase__description .showcase__title h2 {
+  color: #cacaca;
+}
+.darkmode .showcase .showcase__flex .showcase__description .showcase__title p {
+  color: #cacaca;
+}
+.darkmode .showcase .showcase__flex .showcase__button .button {
+  color: #fff;
+  border: 4px dotted red;
+}
+.darkmode .showcase .showcase__flex .showcase__button .button:hover {
+  background-color: red;
+}
+.darkmode .showcase .showcase__details h3 {
+  color: #cacaca;
+}
+.darkmode .showcase .showcase__details ul li {
+  color: #cacaca;
+}
+.darkmode .showcase .to__index {
+  color: #cacaca;
+}
+.darkmode .cart h2 {
+  color: #cacaca;
+}
+.darkmode .cart .cart__flex .cart__container .cart__title h3 {
+  color: red;
+}
+.darkmode .cart .cart__flex .cart__container .cart__title .close__btn img {
+  filter: invert(1);
+}
+.darkmode .cart .cart__flex .cart__container .cart__price p {
+  color: #fff;
+}
+.darkmode .cart .cart__flex .cart__total .cart__value .cart__value__box:nth-last-child(1) p {
+  color: #fff;
+}
+.darkmode .cart .cart__flex .cart__total .cart__value .cart__value__box:nth-last-child(1) span {
+  color: #fff;
+}
+.darkmode .cart .cart__button a:nth-child(1) {
+  background-color: red;
+  border: none;
+}
+.darkmode .cart .cart__button a {
+  color: #fff;
+}
+
 .hero {
   display: flex;
   flex-direction: column;
@@ -137,6 +220,22 @@ nav .nav__menu {
   align-items: center;
   gap: 1.7rem;
 }
+nav .nav__menu #theme-switch {
+  height: 50px;
+  width: 50px;
+  padding: 0;
+  border-radius: 50%;
+  background-color: gray;
+  outline: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: none;
+  justify-content: center;
+}
+nav .nav__menu #theme-switch img:nth-last-child(1) {
+  display: none;
+}
 nav .desktop {
   display: none;
 }
@@ -154,6 +253,49 @@ nav .icon__nav .cart__shopping__amount {
   opacity: 0.9;
   border-radius: 50%;
   padding: 2px 5px;
+}
+
+body.darkmode #theme-switch img:first-child {
+  display: none;
+}
+body.darkmode #theme-switch img:nth-last-child(1) {
+  display: block;
+}
+body.darkmode .hero__img .light-mode-img {
+  opacity: 0;
+}
+body.darkmode .hero__img .dark-mode-img {
+  opacity: 1;
+}
+
+body:not(.darkmode) #theme-switch img:first-child {
+  display: block;
+}
+body:not(.darkmode) #theme-switch img:nth-last-child(1) {
+  display: none;
+}
+body:not(.darkmode) .hero__img .light-mode-img {
+  opacity: 1;
+}
+body:not(.darkmode) .hero__img .dark-mode-img {
+  opacity: 0;
+}
+
+.hero__img {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+.hero__img img {
+  width: 100%;
+  height: auto;
+  transition: opacity 0.3s ease;
+}
+.hero__img .dark-mode-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
 }
 
 @media (min-width: 834px) {
@@ -198,12 +340,6 @@ nav .icon__nav .cart__shopping__amount {
     width: 20px;
     height: 20px;
   }
-  nav .desktop {
-    display: block;
-  }
-  nav .mobile {
-    display: none;
-  }
 }
 footer {
   padding-inline: 1.3rem;
@@ -230,6 +366,7 @@ footer nav .footer__flex a {
 }
 footer .copyright p {
   font-size: 0.8rem;
+  color: #000000;
 }
 
 @media (min-width: 1100px) {
@@ -251,6 +388,7 @@ footer .copyright p {
   font-size: 3rem;
   font-weight: 400;
   margin-bottom: 1.5rem;
+  color: #000000;
 }
 .products .products__grid {
   display: grid;
@@ -283,6 +421,7 @@ footer .copyright p {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  color: #000000;
 }
 .products .products__grid .product__card .product__description span {
   font-size: 1.5rem;
@@ -351,47 +490,21 @@ footer .copyright p {
   margin-bottom: 2rem;
 }
 .showcase .showcase__flex .showcase__description .showcase__title h2 {
+  color: #000000;
   font-size: 2.6rem;
   margin-bottom: 1rem;
   font-weight: 400;
 }
 .showcase .showcase__flex .showcase__description .showcase__title p {
   font-size: 1.4rem;
-}
-.showcase .showcase__flex .showcase__description .showcase__sizes {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 2rem;
-  gap: 1rem;
-}
-.showcase .showcase__flex .showcase__description .showcase__sizes .sizes {
-  border: 1px solid #000000;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: 700;
-  cursor: pointer;
-}
-.showcase .showcase__flex .showcase__description .showcase__sizes .sizes:hover {
-  background-color: grey;
-}
-.showcase .showcase__flex .showcase__description .showcase__sizes .sizes.active {
-  background-color: grey;
+  color: #000000;
 }
 .showcase .showcase__flex .showcase__button {
   margin-bottom: 3.5rem;
 }
-.showcase .showcase__flex .goBack {
-  padding-top: 5rem;
-  color: #000000;
-  text-decoration: underline;
-}
 .showcase .showcase__details h3 {
   font-size: 2rem;
+  color: #000000;
   text-align: start;
   margin-bottom: 1.5rem;
 }
@@ -405,6 +518,7 @@ footer .copyright p {
 }
 .showcase .showcase__details ul li {
   font-size: 1.1rem;
+  color: #000000;
 }
 .showcase .to__index {
   display: flex;
@@ -452,6 +566,7 @@ footer .copyright p {
 .cart h2 {
   font-size: 1.2rem;
   font-family: "Roboto", sans-serif;
+  color: #000000;
   padding-bottom: 1rem;
 }
 .cart .cart__flex {
@@ -473,9 +588,10 @@ footer .copyright p {
 }
 .cart .cart__flex .cart__container .cart__title h3 {
   font-size: 1.7rem;
+  color: #000000;
 }
 .cart .cart__flex .cart__container .cart__title .close__btn img {
-  width: 15px;
+  width: 18px;
   position: absolute;
   right: 3%;
   top: 6%;

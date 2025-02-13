@@ -1,0 +1,198 @@
+@use '../utils/variables' as vars;
+
+
+.darkmode {
+    background-image: url(/public/images/background_image/bg_darkmode.png);
+    height: auto;
+
+
+    //  NAVBAR //
+    nav{
+        .logo{
+            color: vars.$white-color;
+        }
+        .icon__nav{
+            
+            .cart__shopping__amount{
+                background-color: vars.$white-color;
+                color: vars.$secondary-color;
+            }
+            img{
+                filter: invert(1); /* Esto invierte los colores de la imagen */
+            }
+        }
+    }
+    
+    
+// MAIN PAGE //
+
+    // HERO //
+
+.hero{
+    .hero__description{
+        p{
+            color: vars.$primary-color;
+        }
+    }
+}
+
+
+    // PRODUCTS SECTION IN INDEX 
+
+    .products{
+        h2{
+            color: vars.$white-color;
+        }
+
+        .products__grid{
+            .product__card{
+                .product__description{
+                    color: vars.$primary-color;
+                }
+            }
+        }
+    }
+
+
+
+    // FOOTER //
+
+footer{
+    nav{
+        .footer__flex{
+            a{
+                color: vars.$primary-color;
+            }
+        }
+    }
+    .copyright{
+        p{
+            color: vars.$white-color;
+        }
+    }
+}
+
+
+
+
+
+// PRODUCT SHOW PAGE //
+
+
+.showcase{
+    .showcase__flex{
+        .showcase__img{
+            .showcase__buttons{
+                p{
+                    color: vars.$white-color;
+                }
+
+                .activeBtn{
+                    color: vars.$red-color;
+                }
+            }
+        }
+
+        .showcase__description{
+            .showcase__title{
+                h2{
+                    color: vars.$primary-color;
+                }
+                p{
+                    color: vars.$primary-color;
+                }
+            }
+            
+        }
+        .showcase__button{
+            .button{
+                color: vars.$white-color;
+                border: 4px dotted vars.$red-color;
+
+                &:hover{
+                    background-color: vars.$red-color;
+                }
+            }
+        
+        }
+    }
+
+    .showcase__details{
+        h3{
+            color: vars.$primary-color;
+        }
+        ul{
+            li{
+                color: vars.$primary-color;
+            }
+        }
+    }
+
+    .to__index{
+        color: vars.$primary-color;
+    }
+}
+
+
+
+
+
+
+// SHOPPING CART PAGE //
+
+.cart{
+    h2{
+        color: vars.$primary-color;
+    }
+
+    .cart__flex{
+        .cart__container{
+            .cart__title{
+                h3{
+                    color: vars.$red-color;
+                }
+
+                .close__btn{
+                    img{
+                        filter: invert(1);
+                    }
+                }
+            }
+
+            .cart__price{
+                p{
+                    color: vars.$white-color;
+                }
+            }
+        }
+
+        .cart__total{
+            .cart__value{
+                .cart__value__box{
+                   &:nth-last-child(1){
+                    p{
+                        color: vars.$white-color;
+                    }
+                    span{
+                        color: vars.$white-color;
+
+                    }
+                   }
+                }
+            }
+        }
+    }
+
+    .cart__button{
+        a:nth-child(1){
+            background-color: vars.$red-color;
+            border: none;
+        }
+        a{
+            color: vars.$white-color;
+        }
+    }
+}
+
+
+}

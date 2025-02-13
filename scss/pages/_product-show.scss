@@ -43,49 +43,26 @@
                 .showcase__title{
                     margin-bottom: 2rem;
                     h2{
+                        color: vars.$secondary-color;
                         font-size: 2.6rem;
                         margin-bottom: 1rem;
                         font-weight: 400;
                     }
                     p{
                         font-size: 1.4rem;
+                        color: vars.$secondary-color;
                     }
                 }
-                .showcase__sizes{
-                    @include mixin.flex-center();
-                    margin-bottom: 2rem;
-                    gap: 1rem;
-                    .sizes{
-                        border: 1px solid vars.$secondary-color;
-                        width: 30px;
-                        height: 30px;
-                        border-radius: 50%;
-                        @include mixin.flex-center();
-                        font-weight: vars.$fw-bold;
-                        cursor: pointer;
-                        &:hover{
-                            background-color: vars.$grey-color;
-                        }
-
-                        &.active{
-                            background-color: vars.$grey-color;
-                        }
-                    }
-                }
+               
             }
             .showcase__button{
                 margin-bottom: 3.5rem;
-            }
-
-            .goBack{
-                padding-top: 5rem;
-                color: vars.$secondary-color;
-                text-decoration: underline;
             }
         }
         .showcase__details{
             h3{
                 font-size: 2rem;
+                color: vars.$secondary-color;
                 text-align: start;
                 margin-bottom: 1.5rem;
             }
@@ -98,6 +75,8 @@
                 row-gap: 1rem;
                 li{
                     font-size: 1.1rem;
+                    color: vars.$secondary-color;
+
                 }
             }
         }

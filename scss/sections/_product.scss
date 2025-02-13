@@ -4,11 +4,11 @@
 
 .products{
     padding-inline: vars.$padding-inline-main-mobile;
-    
     h2{
         font-size: 3rem;
         font-weight: vars.$fw-regular;
         margin-bottom: 1.5rem;
+        color: vars.$secondary-color;
     }
 
     .products__grid{
@@ -37,7 +37,7 @@
             .product__description{
                 @include mixin.flex-center();
                 flex-direction: column;
-
+                color: vars.$secondary-color;
                 span{
                     font-size: 1.5rem;
                     font-weight: vars.$fw-bold;
