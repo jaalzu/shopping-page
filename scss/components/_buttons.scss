@@ -17,8 +17,23 @@
         background-color: vars.$secondary-color;
         color: vars.$white-color;
     }
+
+   
 }
 
+#checkout-btn{
+    border: 3px solid vars.$secondary-color;
+    margin-inline: .7rem;
+    border-radius: 5px;
+    width: 100%;
+    height: 41px;
+    font-size: 1.050rem;
+    font-weight: vars.$fw-bold;
+
+    &:hover{
+        color: vars.$white-color;
+    }
+}
 
 .primary__button{
     width: 257px;

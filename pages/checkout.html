@@ -73,43 +73,45 @@
                     <input type="number" id="number" required>
                 </div>
             </div>
+            
                 <button class="button primary__button button__desktop">continue to payment</button>
         </form>
     </div>
 
     <div class="checkout__info">
         <span>ORDER SUMMARY</span>
-        <div id="cart-total-container">
-            <p>$2000</p>
+            <div class="cart__value">
+                <div class="cart__value__box">
+                    <p>Subtotal:</p>
+                    <span class="cart-subtotal"></span>
+            </div>
+            <div class="cart__value__box">
+                <p>Taxes:</p>
+                <span class="cart-taxes"></span>
+            </div>
+            <div class="cart__value__box">
+                <p>Shipping:</p>
+                <span id="shipping-cost">$0</span>
+            </div>
+            <div class="cart__value__box">
+                <p>TOTAL:</p>
+                <span class="cart-total"></span>
+            </div>
         </div>
+        
         <div class="checkout__product">
-          <span class="product-title">t-shirt</span>
-          <div class="product__info">
-            <img src="/public/images/products/t-shirt-1.webp" alt="">
-                <div>
-                    <p>$240</p>
-                    <p>x 1</p>
-                </div>
           </div>
+
+          
         </div>
-        <div class="checkout__product">
-          <span class="product-title">t-shirt</span>
-          <div class="product__info">
-            <img src="/public/images/products/t-shirt-1.webp" alt="">
-                <div>
-                    <p>$240</p>
-                    <p>x 1</p>
-                </div>
-          </div>
-        </div>
-        </div>
+       </div>
       </div>
     </div>
 </section> 
 
 
 <div class="checkout__button__mobile">
-    <a href="#" class="button primary__button " id="checkout-btn">CONTINUE TO PAYMENT</a>
+    <button class="button primary__button " id="checkout-btn">CONTINUE TO PAYMENT</button>
 </div>
 
 

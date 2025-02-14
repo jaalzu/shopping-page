@@ -4,7 +4,7 @@
 
 #checkout{
     padding-top: 3rem;
-    padding-bottom: 4rem;
+    padding-bottom: 1rem;
     padding-inline: vars.$padding-inline-checkout-page-mobile;
 
     .checkout__title{
@@ -15,7 +15,7 @@
     }
 
     .checkout__flex{
-        margin-top: .3rem;
+        margin-top: .6rem;
         display: flex;
         flex-direction: column;
         border-top: 2px solid vars.$light-grey-color;
@@ -51,7 +51,7 @@
                 label{
                     color: vars.$grey-color;
                     font-weight: vars.$fw-bold;
-                    font-size: .960rem;
+                    font-size: .850rem;
                     margin-bottom: .3rem;
                 }
                 input , select{
@@ -79,17 +79,57 @@
             display: flex;
             flex-direction: column;
 
+
+            .cart__value{
+                margin-inline: 8px;
+                padding-bottom: 1.5rem;
+                border-bottom: 2px solid vars.$light-grey-color;
+                
+            .cart__value__box{
+                align-items: center;
+                justify-content: space-between;
+                display: flex;
+
+                p{
+                    color: vars.$grey-color;
+                        font-weight: 700;
+                        font-size: 1rem;
+                }
+
+                span{
+                    font-size: 1rem;
+                    color: vars.$grey-color;
+                    font-weight: vars.$fw-bold;
+                }
+
+                &:nth-last-child(1){
+                    margin-top: .2rem;
+                    p{
+                        color: vars.$secondary-color;
+                        font-size: 1.2rem;
+                    }
+                    span{
+                        font-size: 1.1rem;
+                        color: vars.$secondary-color;
+                    }
+                }
+                
+                span{
+                    margin: .3rem;
+                }
+            }
+        }
+            
             #cart-total-container{
                 border-bottom: 2px solid vars.$light-grey-color;
                 padding-bottom: 2rem;
-
             }
 
             .checkout__product{
                 margin-inline: 12px;
                 display: flex;
                 flex-direction: column;
-                border-bottom: 2px solid vars.$light-grey-color;
+                border-bottom: 1px solid vars.$light-grey-color;
                 
                     span{
                         font-size: 1.5rem;
@@ -98,22 +138,42 @@
                     }
                     .product__info{
                         display: flex;
-                        align-items: center;
+                        align-items: flex-start;
                         padding-bottom: .7rem;
-                        img{
-                            width: 75px;
-                            height: auto;
+                        flex-direction: column;
+                        border-bottom: 1px solid vars.$light-grey-color;
+
+                        .product-title{
+                            font-size: 1.5rem;
+                            margin-top: .7rem;
+                            color: vars.$secondary-color;
+                            font-weight: vars.$fw-bold;
+                            font-family: vars.$ff-primary;
                         }
+
+                        .product__img__amount{
+                            display: flex;
+                            align-items: center;
+                            margin-top: 1rem;
+
+                            img{
+                                width: 75px;
+                                height: auto;
+                            }
+
+
                         div{
                             display: flex;
                             flex-direction: column;
                             align-items: center;
-                            margin-left: 1rem;
+                            margin-left: 2rem;
                             p{
                                 color: vars.$grey-color;
                                 font-weight: vars.$fw-bold;
                             }
                         }
+                    }
+
                     }
             }
 
@@ -125,16 +185,9 @@
     position: fixed;
     bottom: 0;
     width: 100%;
-    background-color: white;
-    padding-block: .4rem;
+    background-color: vars.$white-color;
+    padding-block: .7rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    #checkout-btn{
-        border: 2px solid black;
-        margin-inline: 1rem;
-            width: 100%;
-            color: black;
-            font-weight: 700;
-    }
 }

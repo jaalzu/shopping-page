@@ -18,12 +18,12 @@ nav {
     .nav__menu {
         display: flex;
         align-items: center;
-        gap: 1.7rem;
+        gap: 1.5rem;
 
         // Estilos para el botón de cambio de tema
         #theme-switch {
-            height: 50px;
-            width: 50px;
+            height: 40px;
+            width: 40px;
             padding: 0;
             border-radius: 50%;
             background-color: vars.$bg-button-darkmode;

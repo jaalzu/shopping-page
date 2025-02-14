@@ -151,7 +151,7 @@ function renderCart() {
                     <img src="${producto.imagenes[0]}" alt="${producto.nombre}">
                 </div>
                 <div class="cart__price">
-                    <p>${producto.precio.toLocaleString()} x 
+                    <p>$${producto.precio.toLocaleString()} x 
                     <input class="cart-quantity" type="number" value="${producto.cantidad || 1}" min="1" data-index="${index}">
                     </p>
                 </div>
@@ -256,12 +256,104 @@ function inicializarPaginaProducto() {
     }
 }
 
+
+
+
+function renderCheckout() {
+    const checkoutContainer = document.querySelector(".checkout__product");
+    if (!checkoutContainer) return;
+
+    checkoutContainer.innerHTML = "";
+
+
+    carrito.forEach(producto => {
+        const productoHTML = `
+            <div class="product__info">
+            <p class="product-title">${producto.nombre}</p>
+            <div class="product__img__amount">       
+            <img src="${producto.imagenes[0]}" alt="${producto.nombre}">
+                <div class="product__amount">
+                    <p id="article-cart-price">$${producto.precio.toLocaleString()}</p>
+                    <p id="article-cart-amount">x ${producto.cantidad || 1}</p>
+                </div>
+                </div> 
+            </div>
+        `;
+
+        checkoutContainer.innerHTML += productoHTML;
+    });
+}
+
+
 // Inicializar la página
 document.addEventListener("DOMContentLoaded", function () {
     inicializarPaginaProducto();
     renderCart();
     actualizarCantidadCarrito();
+    renderCheckout();
 });
+
+class Carrito {
+    constructor(containerSelector) {
+        this.container = document.querySelector(containerSelector);
+        if (!this.container) return;
+
+        this.subtotalElement = this.container.querySelector(".cart-subtotal");
+        this.totalElement = this.container.querySelector(".cart-total");
+        this.shippingElement = this.container.querySelector("#shipping-cost");
+        this.taxElement = this.container.querySelector(".cart-taxes");
+
+        this.carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+        this.actualizar();
+    }
+
+    calcularTotales() {
+        const subtotal = this.carrito.reduce((acc, item) => acc + (item.precio * (item.cantidad || 1)), 0);
+        const shippingCost = this.carrito.length > 0 ? 30 : 0;
+        const taxes = 0;
+        const total = subtotal + shippingCost + taxes;
+
+        return { subtotal, shippingCost, total };
+    }
+
+    actualizar() {
+        if (!this.container) return;
+
+        const { subtotal, shippingCost,  total } = this.calcularTotales();
+
+        if (this.subtotalElement) this.subtotalElement.textContent = `$${subtotal.toLocaleString()}`;
+        if (this.shippingElement) this.shippingElement.textContent = `$${shippingCost}`;
+        if (this.taxElement) this.taxElement.textContent = `$0`;
+        if (this.totalElement) this.totalElement.textContent = `$${total.toLocaleString()}`;
+    }
+
+    agregarProducto(producto) {
+        const index = this.carrito.findIndex(item => item.id === producto.id);
+        if (index !== -1) {
+            this.carrito[index].cantidad += 1;
+        } else {
+            this.carrito.push({ ...producto, cantidad: 1 });
+        }
+        this.guardarCarrito();
+    }
+
+    eliminarProducto(id) {
+        this.carrito = this.carrito.filter(item => item.id !== id);
+        this.guardarCarrito();
+    }
+
+    guardarCarrito() {
+        localStorage.setItem("carrito", JSON.stringify(this.carrito));
+        this.actualizar();
+    }
+}
+
+// Inicializar la clase cuando cargue la página
+document.addEventListener("DOMContentLoaded", () => {
+    const carrito = new Carrito(".cart__value");
+});
+
+
 
 
 

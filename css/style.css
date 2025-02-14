@@ -33,7 +33,7 @@ h1, h2, h3 {
   font-family: "UnifrakturMaguntia", serif;
 }
 
-p, a, span, input, label, select {
+p, a, span, input, label, select, button {
   font-family: "Roboto", sans-serif;
 }
 
@@ -57,6 +57,19 @@ p, a, span, input, label, select {
 }
 .button:hover {
   background-color: #000000;
+  color: #fff;
+}
+
+#checkout-btn {
+  border: 3px solid #000000;
+  margin-inline: 0.7rem;
+  border-radius: 5px;
+  width: 100%;
+  height: 41px;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+#checkout-btn:hover {
   color: #fff;
 }
 
@@ -153,6 +166,32 @@ p, a, span, input, label, select {
 .darkmode .cart .cart__button a {
   color: #fff;
 }
+.darkmode #checkout .checkout__title {
+  color: #fff;
+}
+.darkmode #checkout .checkout__flex span {
+  color: #fff;
+}
+.darkmode #checkout .checkout__flex .checkout__info .cart__value .cart__value__box p {
+  color: #fff;
+}
+.darkmode #checkout .checkout__flex .checkout__info .cart__value .cart__value__box span {
+  color: #fff;
+}
+.darkmode #checkout .checkout__flex .checkout__info .cart__value .cart__value__box:nth-last-child(1) {
+  margin-top: 0.2rem;
+}
+.darkmode #checkout .checkout__flex .checkout__info .cart__value .cart__value__box:nth-last-child(1) p {
+  color: #fff;
+  font-size: 1.2rem;
+}
+.darkmode #checkout .checkout__flex .checkout__info .cart__value .cart__value__box:nth-last-child(1) span {
+  font-size: 1.1rem;
+  color: #fff;
+}
+.darkmode #checkout .checkout__flex .checkout__info .checkout__product .product__info .product-title {
+  color: rgb(226, 13, 13);
+}
 
 .hero {
   display: flex;
@@ -212,7 +251,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 40px;
+  padding-top: 20px;
   padding-inline: 21px;
 }
 nav .logo {
@@ -222,11 +261,11 @@ nav .logo {
 nav .nav__menu {
   display: flex;
   align-items: center;
-  gap: 1.7rem;
+  gap: 1.5rem;
 }
 nav .nav__menu #theme-switch {
-  height: 50px;
-  width: 50px;
+  height: 40px;
+  width: 40px;
   padding: 0;
   border-radius: 50%;
   background-color: rgb(48, 47, 47);
@@ -664,7 +703,7 @@ footer .copyright p {
 }
 .cart .cart__flex .cart__total .cart__value .cart__value__box:nth-last-child(1) p {
   color: #000000;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
 }
 .cart .cart__flex .cart__total .cart__value .cart__value__box:nth-last-child(1) span {
   font-size: 1.1rem;
@@ -747,7 +786,7 @@ footer .copyright p {
 }
 #checkout {
   padding-top: 3rem;
-  padding-bottom: 4rem;
+  padding-bottom: 1rem;
   padding-inline: 23px;
 }
 #checkout .checkout__title {
@@ -757,7 +796,7 @@ footer .copyright p {
   font-weight: 700;
 }
 #checkout .checkout__flex {
-  margin-top: 0.3rem;
+  margin-top: 0.6rem;
   display: flex;
   flex-direction: column;
   border-top: 2px solid rgb(172, 172, 172);
@@ -792,7 +831,7 @@ footer .copyright p {
 #checkout .checkout__flex .form__container form .form__input label {
   color: grey;
   font-weight: 700;
-  font-size: 0.96rem;
+  font-size: 0.85rem;
   margin-bottom: 0.3rem;
 }
 #checkout .checkout__flex .form__container form .form__input input, #checkout .checkout__flex .form__container form .form__input select {
@@ -813,6 +852,40 @@ footer .copyright p {
   display: flex;
   flex-direction: column;
 }
+#checkout .checkout__flex .checkout__info .cart__value {
+  margin-inline: 8px;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid rgb(172, 172, 172);
+}
+#checkout .checkout__flex .checkout__info .cart__value .cart__value__box {
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+}
+#checkout .checkout__flex .checkout__info .cart__value .cart__value__box p {
+  color: grey;
+  font-weight: 700;
+  font-size: 1rem;
+}
+#checkout .checkout__flex .checkout__info .cart__value .cart__value__box span {
+  font-size: 1rem;
+  color: grey;
+  font-weight: 700;
+}
+#checkout .checkout__flex .checkout__info .cart__value .cart__value__box:nth-last-child(1) {
+  margin-top: 0.2rem;
+}
+#checkout .checkout__flex .checkout__info .cart__value .cart__value__box:nth-last-child(1) p {
+  color: #000000;
+  font-size: 1.2rem;
+}
+#checkout .checkout__flex .checkout__info .cart__value .cart__value__box:nth-last-child(1) span {
+  font-size: 1.1rem;
+  color: #000000;
+}
+#checkout .checkout__flex .checkout__info .cart__value .cart__value__box span {
+  margin: 0.3rem;
+}
 #checkout .checkout__flex .checkout__info #cart-total-container {
   border-bottom: 2px solid rgb(172, 172, 172);
   padding-bottom: 2rem;
@@ -821,7 +894,7 @@ footer .copyright p {
   margin-inline: 12px;
   display: flex;
   flex-direction: column;
-  border-bottom: 2px solid rgb(172, 172, 172);
+  border-bottom: 1px solid rgb(172, 172, 172);
 }
 #checkout .checkout__flex .checkout__info .checkout__product span {
   font-size: 1.5rem;
@@ -830,20 +903,34 @@ footer .copyright p {
 }
 #checkout .checkout__flex .checkout__info .checkout__product .product__info {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   padding-bottom: 0.7rem;
+  flex-direction: column;
+  border-bottom: 1px solid rgb(172, 172, 172);
 }
-#checkout .checkout__flex .checkout__info .checkout__product .product__info img {
+#checkout .checkout__flex .checkout__info .checkout__product .product__info .product-title {
+  font-size: 1.5rem;
+  margin-top: 0.7rem;
+  color: #000000;
+  font-weight: 700;
+  font-family: "UnifrakturMaguntia", serif;
+}
+#checkout .checkout__flex .checkout__info .checkout__product .product__info .product__img__amount {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+}
+#checkout .checkout__flex .checkout__info .checkout__product .product__info .product__img__amount img {
   width: 75px;
   height: auto;
 }
-#checkout .checkout__flex .checkout__info .checkout__product .product__info div {
+#checkout .checkout__flex .checkout__info .checkout__product .product__info .product__img__amount div {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-left: 1rem;
+  margin-left: 2rem;
 }
-#checkout .checkout__flex .checkout__info .checkout__product .product__info div p {
+#checkout .checkout__flex .checkout__info .checkout__product .product__info .product__img__amount div p {
   color: grey;
   font-weight: 700;
 }
@@ -852,18 +939,11 @@ footer .copyright p {
   position: fixed;
   bottom: 0;
   width: 100%;
-  background-color: white;
-  padding-block: 0.4rem;
+  background-color: #fff;
+  padding-block: 0.7rem;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.checkout__button__mobile #checkout-btn {
-  border: 2px solid black;
-  margin-inline: 1rem;
-  width: 100%;
-  color: black;
-  font-weight: 700;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -201,4 +201,53 @@ footer{
 }
 
 
+// checkout page //
+
+#checkout{
+    .checkout__title{
+        color: vars.$white-color;
+    }
+    .checkout__flex{
+        span{
+            color: vars.$white-color;
+
+        }
+
+        .checkout__info{
+            .cart__value{
+                .cart__value__box{
+                    p{
+                   color: vars.$white-color;
+                    }
+                    span{
+                        color: vars.$white-color;
+                    }
+
+                    &:nth-last-child(1){
+                        margin-top: .2rem;
+                        p{
+                            color: vars.$white-color;
+
+                            font-size: 1.2rem;
+                        }
+                        span{
+                            font-size: 1.1rem;
+                            color: vars.$white-color;
+
+                        }
+                    }
+                }
+            }
+
+
+            .checkout__product{
+                .product__info{
+                    .product-title{
+                        color: vars.$red-color;
+                    }
+                }
+            }
+        }
+    }
+}
 }
