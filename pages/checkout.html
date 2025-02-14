@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>checkout</title>
+    <link rel="stylesheet" href="/css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+
+
+</head>
+<body class="darkmode">
+
+<header class="header" id="header">
+    <nav class="nav">
+        <a href="../index.html" class="logo primary-font">starshopping</a>
+        <div class="nav__menu">
+            <button id="theme-switch">
+                <img src="/public/images/icons/dark_mode_24dp_D9D9D9_FILL0_wght400_GRAD0_opsz24.svg"  alt="dark mode">
+            <img src="/public/images/icons/light_mode_24dp_D9D9D9_FILL0_wght400_GRAD0_opsz24.svg"   alt="light mode">
+               </button>
+            <a href="cart.html" class="icon__nav" id="cart-shopping"><img src="/public/images/icons/bag-shopping-solid.svg" alt=""><p class="cart__shopping__amount" id="cart-shopping-amount"></p></a>
+        </div>
+    </nav>
+</header>
+
+<section class="checkout" id="checkout">
+    <h2>CHECKOUT</h2>
+    <div class="checkout__flex">
+       <h3>SHIPPING</h3>
+        <div class="form">
+         <form action="#">
+            <div class="form__input">
+                <label for="first-name">First name</label>
+                <input type="text" id="first-name" required>
+            </div>
+            <div class="form__input">
+                <label for="first-name">Last name</label>
+                <input type="text" id="last-name" required>
+            </div>
+            <div class="form__input">
+                <label for="country">Country</label>
+                <select name="country" id="country">
+                    <option value="">Loading country's...</option>
+                </select>
+            </div>
+            <div class="form__input">
+                <label for="address">Address</label>
+                <input type="text" id="address" required>
+            </div>
+            <div class="form__input">
+                <label for="city">City</label>
+                <input type="text" id="city" required>
+            </div>
+            <div class="form__input">
+                <label for="zipCode">ZIP Code</label>
+                <input type="text" id="zipCode" required>
+            </div>
+            <div class="form__input">
+                <label for="number">Phone Number</label>
+                <input type="number" id="number" required>
+            </div>
+            <button class="button primary__button ">continue to payment</button>
+        </form>
+    </div>
+
+    <div class="checkout__info">
+        <h3>ORDER SUMMARY</h3>
+        <div class="checkout__price">
+            <div class="cart__value">
+                <div class="cart__value__box">
+                    <p>Subtotal:</p>
+                    <span  class="cart-total"></span>
+                </div>
+                <div class="cart__value__box">
+                    <p>Taxes:</p>
+                    <span>$0</span>
+                </div>
+                <div class="cart__value__box">
+                    <p>Shipping:</p>
+                    <span id="shipping-cost">$0</span>
+                </div>
+                <div class="cart__value__box">
+                    <p>Total:</p>
+                    <span  class="cart-total"></span>
+                </div>
+            </div>
+        </div>
+        <div class="checkout__product">
+            <h2 id="product-title"></h2>
+            <div class="product__info">
+                <img src="" alt="">
+                <p id="product-price"></p>
+                <p id="product-amount">2</p>
+            </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+<div class="checkout__button__mobile">
+    <a href="#" class="button primary__button " id="checkout-btn">CONTINUE TO PAYMENT</a>
+</div>
+
+
+
+
+<footer class="footer" id="footer">
+    <nav>
+        <a href="" class="logo primary-font">starshopping</a>
+        <div class="footer__flex">
+            <a href="#" class="nav__link">home</a>
+            <a href="#" class="nav__link">about</a>
+            <a href="#" class="nav__link">contact</a>
+        </div>
+    </nav>
+    <div class="copyright">
+        <p>
+            @2025 JAVALZU STARSHOPPING. All rights reserved
+        </p>
+    </div>
+</footer>
+
+
+<script src="https://kit.fontawesome.com/589ccb3687.js" crossorigin="anonymous" defer></script>
+
+    <script src="../script.js"></script>
+</body>
+</html>
