@@ -262,3 +262,6 @@ document.addEventListener("DOMContentLoaded", function () {
     renderCart();
     actualizarCantidadCarrito();
 });
+
+
+

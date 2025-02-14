@@ -2,11 +2,11 @@
 @use '../utils/mixins' as mixin;
 
 .cart{
-    height: auto;
-    width: 100%;
+    
     padding-inline: 24px;
     margin-bottom: 3rem;
-    margin-top: 3rem;
+    padding-top: 3rem;
+
     h2{
         font-size: 1.2rem;
         font-family: vars.$ff-secondary;

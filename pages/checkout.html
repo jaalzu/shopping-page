@@ -12,7 +12,7 @@
 
 
 </head>
-<body class="darkmode">
+<body >
 
 <header class="header" id="header">
     <nav class="nav">
@@ -27,19 +27,25 @@
     </nav>
 </header>
 
+
+
+
+
 <section class="checkout" id="checkout">
-    <h2>CHECKOUT</h2>
+    <span class="checkout__title">CHECKOUT</span>
     <div class="checkout__flex">
-       <h3>SHIPPING</h3>
-        <div class="form">
+       <span>SHIPPING</span>
+        <div class="form__container">
          <form action="#">
-            <div class="form__input">
-                <label for="first-name">First name</label>
-                <input type="text" id="first-name" required>
-            </div>
-            <div class="form__input">
-                <label for="first-name">Last name</label>
-                <input type="text" id="last-name" required>
+            <div class="form__input__desktop">
+                <div class="form__input">
+                    <label for="first-name">First name</label>
+                    <input type="text" id="first-name" required>
+                </div>
+                <div class="form__input">
+                    <label for="first-name">Last name</label>
+                    <input type="text" id="last-name" required>
+                </div>
             </div>
             <div class="form__input">
                 <label for="country">Country</label>
@@ -47,63 +53,66 @@
                     <option value="">Loading country's...</option>
                 </select>
             </div>
-            <div class="form__input">
-                <label for="address">Address</label>
-                <input type="text" id="address" required>
+            <div class="form__input__desktop">
+                <div class="form__input">
+                    <label for="address">Address</label>
+                    <input type="text" id="address" required>
+                </div>
+                <div class="form__input">
+                    <label for="city">City</label>
+                    <input type="text" id="city" required>
+                </div>
             </div>
-            <div class="form__input">
-                <label for="city">City</label>
-                <input type="text" id="city" required>
+            <div class="form__input__desktop">
+                <div class="form__input">
+                    <label for="zipCode">ZIP Code</label>
+                    <input type="text" id="zipCode" required>
+                </div>
+                <div class="form__input">
+                    <label for="number">Phone Number</label>
+                    <input type="number" id="number" required>
+                </div>
             </div>
-            <div class="form__input">
-                <label for="zipCode">ZIP Code</label>
-                <input type="text" id="zipCode" required>
-            </div>
-            <div class="form__input">
-                <label for="number">Phone Number</label>
-                <input type="number" id="number" required>
-            </div>
-            <button class="button primary__button ">continue to payment</button>
+                <button class="button primary__button button__desktop">continue to payment</button>
         </form>
     </div>
 
     <div class="checkout__info">
-        <h3>ORDER SUMMARY</h3>
-        <div class="checkout__price">
-            <div class="cart__value">
-                <div class="cart__value__box">
-                    <p>Subtotal:</p>
-                    <span  class="cart-total"></span>
-                </div>
-                <div class="cart__value__box">
-                    <p>Taxes:</p>
-                    <span>$0</span>
-                </div>
-                <div class="cart__value__box">
-                    <p>Shipping:</p>
-                    <span id="shipping-cost">$0</span>
-                </div>
-                <div class="cart__value__box">
-                    <p>Total:</p>
-                    <span  class="cart-total"></span>
-                </div>
-            </div>
+        <span>ORDER SUMMARY</span>
+        <div id="cart-total-container">
+            <p>$2000</p>
         </div>
         <div class="checkout__product">
-            <h2 id="product-title"></h2>
-            <div class="product__info">
-                <img src="" alt="">
-                <p id="product-price"></p>
-                <p id="product-amount">2</p>
-            </div>
+          <span class="product-title">t-shirt</span>
+          <div class="product__info">
+            <img src="/public/images/products/t-shirt-1.webp" alt="">
+                <div>
+                    <p>$240</p>
+                    <p>x 1</p>
+                </div>
+          </div>
+        </div>
+        <div class="checkout__product">
+          <span class="product-title">t-shirt</span>
+          <div class="product__info">
+            <img src="/public/images/products/t-shirt-1.webp" alt="">
+                <div>
+                    <p>$240</p>
+                    <p>x 1</p>
+                </div>
+          </div>
+        </div>
         </div>
       </div>
     </div>
-</section>
+</section> 
+
 
 <div class="checkout__button__mobile">
     <a href="#" class="button primary__button " id="checkout-btn">CONTINUE TO PAYMENT</a>
 </div>
+
+
 
 
 
