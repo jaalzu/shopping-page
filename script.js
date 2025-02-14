@@ -135,8 +135,10 @@ function actualizarTotal() {
 // Función para renderizar el carrito
 function renderCart() {
     const cartContainer = document.getElementById("cart-container");
+    const cartTotalContainer = document.getElementById("cart-total-container")
     if (!cartContainer) return;
-
+    
+    
     cartContainer.innerHTML = carrito.length === 0
         ? '<p style="margin-top: 0.5rem; text-align: center; font-size: 1rem; color: #777;">Tu carrito está vacío</p>'
         : carrito.map((producto, index) => `
