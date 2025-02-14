@@ -26,7 +26,7 @@ nav {
             width: 50px;
             padding: 0;
             border-radius: 50%;
-            background-color: gray;
+            background-color: vars.$bg-button-darkmode;
             outline: none;
             cursor: pointer;
             display: flex;
@@ -55,8 +55,8 @@ nav {
             position: absolute;
             right: -30%;
             top: -30%;
-            background-color: white;
-            color: black;
+            background-color: vars.$white-color;
+            color: vars.$secondary-color;
             opacity: 0.9;
             border-radius: 50%;
             padding: 2px 5px;
@@ -64,57 +64,50 @@ nav {
     }
 }
 
-// Estilos para el modo oscuro
 body.darkmode {
-    // Cambiar el ícono del botón de tema
     #theme-switch {
         img:first-child {
-            display: none; // Oculta la luna
+            display: none; 
         }
 
         img:nth-last-child(1) {
-            display: block; // Muestra el sol
+            display: block; 
         }
     }
 
-    // Cambiar la imagen del hero en modo oscuro
     .hero__img {
         .light-mode-img {
-            opacity: 0; // Oculta la imagen del modo claro
+            opacity: 0; 
         }
 
         .dark-mode-img {
-            opacity: 1; // Muestra la imagen del modo oscuro
+            opacity: 1;
         }
     }
 }
 
-// Estilos para el modo claro
 body:not(.darkmode) {
-    // Cambiar el ícono del botón de tema
     #theme-switch {
         img:first-child {
-            display: block; // Muestra la luna
+            display: block;
         }
 
         img:nth-last-child(1) {
-            display: none; // Oculta el sol
+            display: none; 
         }
     }
 
-    // Cambiar la imagen del hero en modo claro
     .hero__img {
         .light-mode-img {
-            opacity: 1; // Muestra la imagen del modo claro
+            opacity: 1; 
         }
 
         .dark-mode-img {
-            opacity: 0; // Oculta la imagen del modo oscuro
+            opacity: 0; 
         }
     }
 }
 
-// Estilos para las imágenes del hero
 .hero__img {
     position: relative;
     width: 100%;
@@ -157,7 +150,6 @@ body:not(.darkmode) {
         }
 
         .nav__menu{
-            flex-direction: row-reverse;
             gap: 2.5rem;
         }
 

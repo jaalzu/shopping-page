@@ -66,7 +66,7 @@ p, a, span {
 }
 
 .darkmode {
-  background-image: url(/public/images/background_image/bg_darkmode.png);
+  background-image: url(/public/images/background_image/bg-dark.webp);
   height: auto;
 }
 .darkmode nav .logo {
@@ -98,7 +98,7 @@ p, a, span {
   color: #fff;
 }
 .darkmode .showcase .showcase__flex .showcase__img .showcase__buttons .activeBtn {
-  color: red;
+  color: rgb(226, 13, 13);
 }
 .darkmode .showcase .showcase__flex .showcase__description .showcase__title h2 {
   color: #cacaca;
@@ -108,10 +108,10 @@ p, a, span {
 }
 .darkmode .showcase .showcase__flex .showcase__button .button {
   color: #fff;
-  border: 4px dotted red;
+  border: 4px dotted rgb(226, 13, 13);
 }
 .darkmode .showcase .showcase__flex .showcase__button .button:hover {
-  background-color: red;
+  background-color: rgb(226, 13, 13);
 }
 .darkmode .showcase .showcase__details h3 {
   color: #cacaca;
@@ -125,8 +125,14 @@ p, a, span {
 .darkmode .cart h2 {
   color: #cacaca;
 }
+.darkmode .cart .cart__flex {
+  border-top: 1px solid grey;
+}
+.darkmode .cart .cart__flex .cart__container {
+  border-bottom: 1px solid rgb(172, 172, 172);
+}
 .darkmode .cart .cart__flex .cart__container .cart__title h3 {
-  color: red;
+  color: rgb(226, 13, 13);
 }
 .darkmode .cart .cart__flex .cart__container .cart__title .close__btn img {
   filter: invert(1);
@@ -141,7 +147,7 @@ p, a, span {
   color: #fff;
 }
 .darkmode .cart .cart__button a:nth-child(1) {
-  background-color: red;
+  background-color: rgb(226, 13, 13);
   border: none;
 }
 .darkmode .cart .cart__button a {
@@ -225,7 +231,7 @@ nav .nav__menu #theme-switch {
   width: 50px;
   padding: 0;
   border-radius: 50%;
-  background-color: gray;
+  background-color: rgb(48, 47, 47);
   outline: none;
   cursor: pointer;
   display: flex;
@@ -248,8 +254,8 @@ nav .icon__nav .cart__shopping__amount {
   position: absolute;
   right: -30%;
   top: -30%;
-  background-color: white;
-  color: black;
+  background-color: #fff;
+  color: #000000;
   opacity: 0.9;
   border-radius: 50%;
   padding: 2px 5px;
@@ -314,7 +320,6 @@ body:not(.darkmode) .hero__img .dark-mode-img {
     font-size: 3.5rem;
   }
   nav .nav__menu {
-    flex-direction: row-reverse;
     gap: 2.5rem;
   }
   nav .search-bar {
@@ -385,10 +390,11 @@ footer .copyright p {
   padding-inline: 10px;
 }
 .products h2 {
-  font-size: 3rem;
+  font-size: 3.3rem;
   font-weight: 400;
   margin-bottom: 1.5rem;
   color: #000000;
+  margin-left: 1rem;
 }
 .products .products__grid {
   display: grid;
@@ -573,14 +579,14 @@ footer .copyright p {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  border-top: 1px solid grey;
+  border-top: 1px solid rgb(172, 172, 172);
 }
 .cart .cart__flex .cart__container {
   padding-bottom: 1rem;
   position: relative;
   display: flex;
   flex-direction: column;
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid rgb(172, 172, 172);
 }
 .cart .cart__flex .cart__container .cart__title {
   padding-bottom: 1rem;
@@ -596,11 +602,15 @@ footer .copyright p {
   right: 3%;
   top: 6%;
 }
+.cart .cart__flex .cart__container .cart__title .close__btn img:hover {
+  width: 19px;
+}
 .cart .cart__flex .cart__container .cart__img {
   width: 100%;
   height: 100%;
 }
 .cart .cart__flex .cart__container .cart__img img {
+  filter: drop-shadow(0px 0px 10px rgba(253, 253, 253, 0.3));
   width: 85px;
 }
 .cart .cart__flex .cart__container .cart__price {
@@ -700,7 +710,7 @@ footer .copyright p {
     padding-bottom: 1.3rem;
   }
   .cart .cart__flex {
-    border-top: 1px solid grey;
+    border-top: 1px solid rgb(172, 172, 172);
     flex-direction: row;
     width: 100%;
     gap: 3rem;

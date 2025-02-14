@@ -2,7 +2,7 @@
 
 
 .darkmode {
-    background-image: url(/public/images/background_image/bg_darkmode.png);
+    background-image: url(/public/images/background_image/bg-dark.webp);
     height: auto;
 
 
@@ -146,7 +146,13 @@ footer{
     }
 
     .cart__flex{
+        border-top: 1px solid vars.$grey-color;
+
+
         .cart__container{
+            border-bottom: 1px solid vars.$light-grey-color;
+
+
             .cart__title{
                 h3{
                     color: vars.$red-color;
