@@ -18,7 +18,7 @@
                 color: vars.$secondary-color;
             }
             img{
-                filter: invert(1); /* Esto invierte los colores de la imagen */
+                filter: invert(1); 
             }
         }
     }
@@ -208,12 +208,24 @@ footer{
         color: vars.$white-color;
     }
     .checkout__flex{
-        span{
-            color: vars.$white-color;
+        .form__container{
+            span{
+                color: vars.$white-color;
+            }
 
+            form{
+                .button__desktop{
+                    background-color: vars.$red-color;
+                    color: vars.$white-color;
+                }
+            }
         }
 
         .checkout__info{
+
+            span{
+                color: vars.$white-color;
+            }
             .cart__value{
                 .cart__value__box{
                     p{
@@ -248,6 +260,8 @@ footer{
                 }
             }
         }
+
+
     }
 }
 }
