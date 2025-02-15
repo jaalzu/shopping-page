@@ -1,0 +1,42 @@
+@use '../utils/variables' as vars;
+@use '../utils/mixins' as mixin;
+
+.cart__value{
+    margin-inline: 8px;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid vars.$light-grey-color;
+    
+.cart__value__box{
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+
+    p{
+        color: vars.$grey-color;
+            font-weight: 700;
+            font-size: 1rem;
+    }
+
+    span{
+        font-size: 1rem;
+        color: vars.$grey-color;
+        font-weight: vars.$fw-bold;
+    }
+
+    &:nth-last-child(1){
+        margin-top: .3rem;
+        p{
+            color: vars.$secondary-color;
+            font-size: 1.2rem;
+        }
+        span{
+            font-size: 1.1rem;
+            color: vars.$secondary-color;
+        }
+    }
+    
+    span{
+        margin: .230rem;
+    }
+}
+}

@@ -1,0 +1,54 @@
+@use '../utils/variables' as vars;
+@use '../utils/mixins' as mixin;
+
+#payment{
+    padding-top: 3rem;
+    padding-bottom: 5rem;
+    padding-inline: vars.$padding-inline-checkout-page-mobile;
+
+    .payment__title{
+        font-size: 1.3rem;
+        color: vars.$secondary-color;
+        margin-left: .7rem;
+        font-weight: vars.$fw-bold;
+        }
+
+        .payment__flex{
+            margin-top: .6rem;
+            display: flex;
+            flex-direction: column;
+            border-top: 1px solid vars.$light-grey-color;
+
+            .payment__info{
+                margin-top: .9rem;
+                padding-bottom: 2rem;
+                width: 100%;
+                span{
+                    font-size: 1.130rem;
+                    margin-left: .7rem;
+                    color: vars.$secondary-color;
+                    font-weight: vars.$fw-bold;
+                }
+
+                .payment__form{
+                    margin-top: 1rem;
+                    form{
+                        .form__input{
+                            margin-block: .5rem;
+                        }
+                        
+                        .form__col-2{
+                            display: flex;
+                            flex-direction: row;
+                            gap: 1rem;
+                            
+                        }
+
+                        .button__desktop{
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+}

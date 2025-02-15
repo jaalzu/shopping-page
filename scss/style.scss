@@ -5,6 +5,7 @@
 @use 'components/buttons';
 @use 'components/cart-total';
 @use 'components/darkmode';
+@use 'components/input-label';
 @use 'layout/hero';
 @use 'layout/nav';
 @use 'layout/footer';
@@ -13,3 +14,4 @@
 @use 'pages/product-show';
 @use 'pages/cart';
 @use 'pages/checkout';
+@use 'pages/payment';

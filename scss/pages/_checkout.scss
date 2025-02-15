@@ -47,27 +47,6 @@
                 gap: .7rem;
             }
 
-            .form__input{
-                display: flex;
-                flex-direction: column;
-                width: 100%;
-                label{
-                    color: vars.$grey-color;
-                    font-weight: vars.$fw-bold;
-                    font-size: .840rem;
-                    margin-bottom: .3rem;
-                }
-                input , select{
-                    height: 35px;
-                    outline: none;
-                    border: none;
-                    padding: 0.5rem;
-                    &:focus {
-                        border: 1px solid vars.$grey-color; 
-                        box-shadow: 0 0 2px vars.$grey-color; // Opcional: agrega un leve resplandor
-                    }
-                }
-            }
             .button__desktop{
                 display: none;
             }
@@ -85,49 +64,14 @@
             span{
                 color: vars.$secondary-color;
                 font-weight: vars.$fw-bold;
-                margin-bottom: .9rem;
                 font-size: 1.1rem;
+
+                 &:nth-child(1){
+                    margin-bottom: .9rem;
+                 }
             }
 
-            .cart__value{
-                margin-inline: 8px;
-                padding-bottom: 1rem;
-                border-bottom: 1px solid vars.$light-grey-color;
-                
-            .cart__value__box{
-                align-items: center;
-                justify-content: space-between;
-                display: flex;
-
-                p{
-                    color: vars.$grey-color;
-                        font-weight: 700;
-                        font-size: 1rem;
-                }
-
-                span{
-                    font-size: 1rem;
-                    color: vars.$grey-color;
-                    font-weight: vars.$fw-bold;
-                }
-
-                &:nth-last-child(1){
-                    margin-top: .3rem;
-                    p{
-                        color: vars.$secondary-color;
-                        font-size: 1.2rem;
-                    }
-                    span{
-                        font-size: 1.1rem;
-                        color: vars.$secondary-color;
-                    }
-                }
-                
-                span{
-                    margin: .230rem;
-                }
-            }
-        }
+        
            
             .checkout__product{
                 margin-inline: 12px;

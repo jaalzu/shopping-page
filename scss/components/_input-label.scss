@@ -1,0 +1,25 @@
+@use '../utils/variables' as vars;
+.form__input{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    
+
+label{
+    color: vars.$grey-color;
+    font-weight: vars.$fw-bold;
+    font-size: .840rem;
+    margin-bottom: .3rem;
+}
+input , select{
+    height: 35px;
+    outline: none;
+    border: none;
+    padding: 0.5rem;
+    &:focus {
+        border: 1px solid vars.$grey-color; 
+        box-shadow: 0 0 2px vars.$grey-color; // Opcional: agrega un leve resplandor
+    }
+}
