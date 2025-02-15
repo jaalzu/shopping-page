@@ -131,17 +131,18 @@ function actualizarTotal() {
 }
 
 
-
 // Función para renderizar el carrito
 function renderCart() {
     const cartContainer = document.getElementById("cart-container");
-    
-    if (!cartContainer) return;
-    
+    const cartTotalContainer = document.getElementById("cart-total-container");
 
-    cartContainer.innerHTML = carrito.length === 0
-        ? '<p style="margin-top: 0.5rem; text-align: center; font-size: 1rem; color: #777;">Tu carrito está vacío</p>'
-        : carrito.map((producto, index) => `
+    if (!cartContainer || !cartTotalContainer) return;
+
+    if (carrito.length === 0) {
+        cartContainer.innerHTML = '<p style="color:red; margin-top: 0.7rem; text-align: center; font-size: 1rem; ;">Tu carrito está vacío</p>';
+        cartTotalContainer.style.display = "none"; // Oculta la sección de total y botones
+    } else {
+        cartContainer.innerHTML = carrito.map((producto, index) => `
             <div class="cart__container">
                 <div class="cart__title">
                     <h3>${producto.nombre}</h3>
@@ -159,6 +160,9 @@ function renderCart() {
                 </div>
             </div>
         `).join("");
+
+        cartTotalContainer.style.display = "block"; // Muestra la sección de total si hay productos
+    }
 
     // Eventos para eliminar productos
     document.querySelectorAll(".close__btn").forEach(btn => {
@@ -192,6 +196,7 @@ function renderCart() {
 
     actualizarTotal();
 }
+
 
 // Función para inicializar la página de productos
 function inicializarPaginaProducto() {
