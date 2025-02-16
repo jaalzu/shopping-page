@@ -164,15 +164,10 @@
                     .form__input__desktop{
                         flex-direction: row;
                         gap: 1rem;
-                      
                     }
                     
                    .button__desktop{
-                    margin-top: 1rem;
                     display: block;
-                    border: 3px solid vars.$secondary-color;
-                    width: 100%;
-                    font-weight: vars.$fw-bold;
                    }
                 }
 

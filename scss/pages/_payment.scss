@@ -67,7 +67,6 @@
                         margin-bottom: 1rem;
                         .form__input{
                             margin-block: .9rem;
-
                         }
                         
                         .form__col-2{
@@ -106,18 +105,34 @@
         max-width: 1300px;
         margin-inline: auto;
         .payment__flex{
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 1rem;
             .payment__info{
-                
+                border-right: 1px solid vars.$light-grey-color;
+                margin-top: 0rem;
+                width: 100%;
+                .payment__top{
+                    margin-top: .9rem;
+                    margin-right: .9rem;
+                }
                 .payment__form{
                     form{
                         
                         .form__col-2{
-                            .button__desktop{
-                                
-                            }
+                            flex-wrap: nowrap;
+                            gap: 2rem;
+                           
+                        }
+                        .button__desktop{
+                            display: block;
                         }
                     }
                 }
+            }
+
+            .checkout__info{
+                width: 70%;
             }
         }
     }
