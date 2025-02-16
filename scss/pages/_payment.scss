@@ -9,8 +9,8 @@
     .payment__title{
         font-size: 1.3rem;
         color: vars.$secondary-color;
-        margin-left: .7rem;
         font-weight: vars.$fw-bold;
+        margin-left: .7rem;
         }
 
         .payment__flex{
@@ -18,30 +18,62 @@
             display: flex;
             flex-direction: column;
             border-top: 1px solid vars.$light-grey-color;
-
+            
             .payment__info{
+                margin-inline: 10px;
                 margin-top: .9rem;
                 padding-bottom: 2rem;
-                width: 100%;
-                span{
-                    font-size: 1.130rem;
-                    margin-left: .7rem;
-                    color: vars.$secondary-color;
-                    font-weight: vars.$fw-bold;
+
+                .payment__top{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding-bottom: 1.1rem;
+                    a{
+                        font-size: 1rem;
+                        color: vars.$grey-color;
+                        font-weight: vars.$fw-bold;
+                        text-decoration: underline;
+                    }
+                    span{
+                        font-size: 1.1rem;
+                        color: vars.$secondary-color;
+                        font-weight: vars.$fw-bold;
+                    }
                 }
 
+                .checkout__show{
+                    display: flex;
+                    align-items: center;
+                    padding-top: .8rem;
+                    margin-bottom: 2.5rem;
+
+                    .checkout__details{
+                        display: flex;
+                        flex-direction: column;
+                        gap: .4rem;
+                        color: vars.$secondary-color;
+                    }
+                }
+
+
                 .payment__form{
-                    margin-top: 1rem;
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+
                     form{
+                        margin-inline: 15px;
+                        margin-bottom: 1rem;
                         .form__input{
-                            margin-block: .5rem;
+                            margin-block: .9rem;
+
                         }
                         
                         .form__col-2{
                             display: flex;
                             flex-direction: row;
-                            gap: 1rem;
-                            
+                            flex-wrap: wrap;
                         }
 
                         .button__desktop{
@@ -50,5 +82,43 @@
                     }
                 }
             }
+
+            .checkout__info{
+                span{
+                    &:nth-child(1){
+                        font-size: 1.050rem;
+                        color: vars.$secondary-color;
+                        font-weight: vars.$fw-bold;
+                    }
+                }
+                .cart__value{
+                    margin-top: .7rem;
+                }
+            }
         }
+}
+
+
+@include mixin.responsive(tablet){
+
+    
+    #payment{
+        max-width: 1300px;
+        margin-inline: auto;
+        .payment__flex{
+            .payment__info{
+                
+                .payment__form{
+                    form{
+                        
+                        .form__col-2{
+                            .button__desktop{
+                                
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

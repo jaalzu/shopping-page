@@ -979,8 +979,8 @@ footer .copyright p {
 #payment .payment__title {
   font-size: 1.3rem;
   color: #000000;
-  margin-left: 0.7rem;
   font-weight: 700;
+  margin-left: 0.7rem;
 }
 #payment .payment__flex {
   margin-top: 0.6rem;
@@ -989,29 +989,73 @@ footer .copyright p {
   border-top: 1px solid rgb(172, 172, 172);
 }
 #payment .payment__flex .payment__info {
+  margin-inline: 10px;
   margin-top: 0.9rem;
   padding-bottom: 2rem;
-  width: 100%;
 }
-#payment .payment__flex .payment__info span {
-  font-size: 1.13rem;
-  margin-left: 0.7rem;
+#payment .payment__flex .payment__info .payment__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1.1rem;
+}
+#payment .payment__flex .payment__info .payment__top a {
+  font-size: 1rem;
+  color: grey;
+  font-weight: 700;
+  text-decoration: underline;
+}
+#payment .payment__flex .payment__info .payment__top span {
+  font-size: 1.1rem;
   color: #000000;
   font-weight: 700;
 }
+#payment .payment__flex .payment__info .checkout__show {
+  display: flex;
+  align-items: center;
+  padding-top: 0.8rem;
+  margin-bottom: 2.5rem;
+}
+#payment .payment__flex .payment__info .checkout__show .checkout__details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  color: #000000;
+}
 #payment .payment__flex .payment__info .payment__form {
-  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+#payment .payment__flex .payment__info .payment__form form {
+  margin-inline: 15px;
+  margin-bottom: 1rem;
 }
 #payment .payment__flex .payment__info .payment__form form .form__input {
-  margin-block: 0.5rem;
+  margin-block: 0.9rem;
 }
 #payment .payment__flex .payment__info .payment__form form .form__col-2 {
   display: flex;
   flex-direction: row;
-  gap: 1rem;
+  flex-wrap: wrap;
 }
 #payment .payment__flex .payment__info .payment__form form .button__desktop {
   display: none;
+}
+#payment .payment__flex .checkout__info span:nth-child(1) {
+  font-size: 1.05rem;
+  color: #000000;
+  font-weight: 700;
+}
+#payment .payment__flex .checkout__info .cart__value {
+  margin-top: 0.7rem;
+}
+
+@media (min-width: 634px) {
+  #payment {
+    max-width: 1300px;
+    margin-inline: auto;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

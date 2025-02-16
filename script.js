@@ -363,4 +363,74 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+// checkout form code 
+document.addEventListener('DOMContentLoaded', function () {
+    console.log('DOM completamente cargado');
 
+    const checkoutForm = document.getElementById('checkout-form');
+    const checkoutButtons = document.querySelectorAll('.primary__button'); // Detecta ambos botones
+
+    if (checkoutForm) {
+        console.log('Formulario de checkout encontrado');
+
+        checkoutButtons.forEach(button => {
+            button.addEventListener('click', function (event) {
+                event.preventDefault(); // Evita el envío predeterminado del formulario
+
+                // Obtiene los valores del formulario
+                const formData = {
+                    firstName: document.getElementById('first-name')?.value.trim() || '',
+                    lastName: document.getElementById('last-name')?.value.trim() || '',
+                    country: document.getElementById('country')?.value || '',
+                    address: document.getElementById('address')?.value.trim() || '',
+                    city: document.getElementById('city')?.value.trim() || '',
+                    zipCode: document.getElementById('zipCode')?.value.trim() || '',
+                    number: document.getElementById('number')?.value.trim() || ''
+                };
+
+                // Verifica que todos los campos estén completos
+                const isFormValid = Object.values(formData).every(value => value !== '');
+                if (!isFormValid) {
+                    console.log('Por favor, completa todos los campos antes de continuar');
+                    alert('Por favor, completa todos los campos antes de continuar.');
+                    return;
+                }
+
+                console.log('Datos del formulario:', formData);
+
+                // Guarda los datos en localStorage
+                localStorage.setItem('formData', JSON.stringify(formData));
+                console.log('Datos almacenados en localStorage');
+
+                // Redirige a la página de pago
+                window.location.href = 'payment.html';
+            });
+        });
+    } else {
+        console.log('Formulario de checkout no encontrado');
+    }
+
+    // Recupera los datos almacenados para mostrarlos en la página de pago
+    const formData = JSON.parse(localStorage.getItem('formData'));
+
+    if (formData) {
+        console.log('Datos recuperados de localStorage:', formData);
+
+        const checkoutShow = document.getElementById('checkout-show');
+
+        if (checkoutShow) {
+            checkoutShow.innerHTML = `
+                <div class = "checkout__details">
+                <p><strong>Full Name:</strong> ${formData.firstName} ${formData.lastName}</p>
+                <p><strong>Country:</strong> ${formData.country}</p>
+                <p><strong>Address:</strong> ${formData.address}</p>
+                <p><strong>City:</strong> ${formData.city}</p>
+                <p><strong>ZIP Code:</strong> ${formData.zipCode}</p>
+                <p><strong>Phone Number:</strong> ${formData.number}</p>
+                </div>
+            `;
+        } 
+    } else {
+        console.log('No hay datos en localStorage');
+    }
+});

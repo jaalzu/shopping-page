@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>checkout</title>
+    <title>payment</title>
     <link rel="stylesheet" href="/css/style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,7 +35,10 @@
     <span class="payment__title">PAYMENT</span>
     <div class="payment__flex">
         <div class="payment__info">
-        <span>SHIPPING</span>
+            <div class="payment__top">
+                <span>SHIPPING</span>
+                <a href="/pages/checkout.html">Edit</a>
+            </div>
         <div class="checkout__show" id="checkout-show">
         </div>
         <div class="payment__form">
@@ -61,13 +64,13 @@
                     <label for="name-card">Name on card</label>
                     <input type="text" id="name-card" required>
                 </div>
-                <button class="button primary__button button__desktop">PURCHASE</button>
+                <button class="button primary__button button__desktop checkout__button">PURCHASE</button>
             </form>
         </div>
     </div>
 
     <div class="checkout__info">
-        <span>ORDER SUMMARY</span>
+        <span class="">ORDER SUMMARY</span>
             <div class="cart__value">
                 <div class="cart__value__box">
                     <p>Subtotal:</p>
@@ -92,7 +95,7 @@
 
 
 <div class="checkout__button__mobile">
-    <button class="button primary__button " id="checkout-btn">PURCHASE</button>
+    <button class="button primary__button checkout__button" id="checkout-btn">PURCHASE</button>
 </div>
 
 
