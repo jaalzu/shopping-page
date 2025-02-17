@@ -144,7 +144,7 @@ function renderCart() {
                 <div class="cart__title">
                     <h3>${producto.nombre}</h3>
                     <a href="#" class="close__btn" data-index="${index}">
-                        <img src="public/images/icons/xmark-solid.svg" alt="elim">
+                        <img src="../public/images/icons/xmark-solid.svg" alt="elim">
                     </a>
                 </div>
                 <div class="cart__img">
