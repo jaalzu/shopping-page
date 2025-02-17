@@ -35,8 +35,8 @@ const productos = [
         id: 2,
         nombre: "t-shirt beamer",
         imagenes: [
-            "./public/images/products/t-shirt-2.webp",
-            "./public/images/products/t-shirt-2-back.webp"
+            "../public/images/products/t-shirt-2.webp",
+            "../public/images/products/t-shirt-2-back.webp"
         ] ,
         precio: 32000,
         caracteristicas: ["100% cotton", "1/1 piece", "made in france"]
@@ -45,8 +45,8 @@ const productos = [
         id: 3,
         nombre: "jacket casablanca",
         imagenes: [
-            "public/images/products/jacket-1.webp",
-            "public/images/products/jacket-1-back.webp"
+            "../public/images/products/jacket-1.webp",
+            "../public/images/products/jacket-1-back.webp"
         ] ,
         precio: 107000,
         caracteristicas: ["100% cotton", "1/1 piece", "made in france"]
@@ -55,8 +55,8 @@ const productos = [
         id: 4,
         nombre: "t-shirt anti social",
         imagenes: [
-            "public/images/products/t-shirt-3.webp",
-            "public/images/products/t-shirt-3-back.webp"
+            "../public/images/products/t-shirt-3.webp",
+            "../public/images/products/t-shirt-3-back.webp"
         ] ,
         precio: 47000,
         caracteristicas: ["100% cotton", "1/1 piece", "made in france"]
@@ -65,8 +65,8 @@ const productos = [
         id: 5,
         nombre: "jean trasher",
         imagenes: [
-            "public/images/products/jean.webp",
-            "public/images/products/jean-model.webp"
+            "../public/images/products/jean.webp",
+            "../public/images/products/jean-model.webp"
         ] ,
         precio: 87000,
         caracteristicas: ["100% cotton", "1/1 piece", "made in france"]
@@ -75,8 +75,8 @@ const productos = [
         id: 6,
         nombre: "jacket off-white",
         imagenes: [
-            "public/images/products/jacket-2.webp",
-            "public/images/products/jacket-2-model.webp"
+            "../public/images/products/jacket-2.webp",
+            "../public/images/products/jacket-2-model.webp"
         ] ,
         precio: 120000,
         caracteristicas: ["100% cotton", "1/1 piece", "made in france"]
@@ -85,8 +85,8 @@ const productos = [
         id: 7,
         nombre: "t-shirt chelsea",
         imagenes: [
-            "public/images/products/t-shirt-4.webp",
-            "public/images/products/t-shirt-4-model.webp"
+            "../public/images/products/t-shirt-4.webp",
+            "../public/images/products/t-shirt-4-model.webp"
         ] ,
         precio: 50000,
         caracteristicas: ["100% cotton", "1/1 piece", "made in france"]
