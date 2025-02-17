@@ -27,7 +27,7 @@ const productos = [
     {
         id: 1,
         nombre: "t-shirt shit-off",
-        imagenes: ["../public/images/products/t-shirt-1.webp","/public/images/products/t-shirt-1-back.webp"] ,
+        imagenes: ["../public/images/products/t-shirt-1.webp","../public/images/products/t-shirt-1-back.webp"] ,
         precio: 37000,
         caracteristicas: ["100% cotton", "1/1 piece", "made in france"]
     },
@@ -35,8 +35,8 @@ const productos = [
         id: 2,
         nombre: "t-shirt beamer",
         imagenes: [
-            "public/images/products/t-shirt-2.webp",
-            "public/images/products/t-shirt-2-back.webp"
+            "./public/images/products/t-shirt-2.webp",
+            "./public/images/products/t-shirt-2-back.webp"
         ] ,
         precio: 32000,
         caracteristicas: ["100% cotton", "1/1 piece", "made in france"]
