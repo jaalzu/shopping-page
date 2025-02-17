@@ -338,7 +338,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 20px;
+  padding-top: 35px;
   padding-inline: 21px;
 }
 nav .logo {
@@ -578,7 +578,7 @@ footer .copyright p {
 }
 .showcase {
   padding-inline: 50px;
-  padding-top: 3rem;
+  padding-top: 4.5rem;
   padding-bottom: 5rem;
 }
 .showcase .showcase__flex {

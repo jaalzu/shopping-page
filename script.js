@@ -34,10 +34,7 @@ const productos = [
     {
         id: 2,
         nombre: "t-shirt beamer",
-        imagenes: [
-            "../public/images/products/t-shirt-2.webp",
-            "../public/images/products/t-shirt-2-back.webp"
-        ] ,
+        imagenes: [ "../public/images/products/t-shirt-2.webp", "../public/images/products/t-shirt-2-back.webp"] ,
         precio: 32000,
         caracteristicas: ["100% cotton", "1/1 piece", "made in france"]
     },
