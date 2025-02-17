@@ -85,6 +85,11 @@ p, a, span, input, label, select, button {
   font-weight: 700;
 }
 
+.order__summary__text {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
 .cart__value {
   margin-inline: 8px;
   padding-bottom: 1rem;
@@ -118,6 +123,17 @@ p, a, span, input, label, select, button {
 }
 .cart__value .cart__value__box span {
   margin: 0.23rem;
+}
+
+.darkmode .cart__value .cart__value__box .cart-total, .darkmode .cart__value .cart__value__box .cart__total {
+  font-weight: 700;
+}
+.darkmode .cart__value .cart__value__box span, .darkmode .cart__value .cart__value__box p {
+  font-weight: 400;
+  color: #fff;
+}
+.darkmode .cart__value .cart__value__box:nth-last-child(1) p {
+  font-weight: 700;
 }
 
 .darkmode {
@@ -214,32 +230,30 @@ p, a, span, input, label, select, button {
 .darkmode #checkout .checkout__flex .form__container span {
   color: #fff;
 }
-.darkmode #checkout .checkout__flex .form__container form .button__desktop {
-  background-color: rgb(226, 13, 13);
-  color: #fff;
-}
 .darkmode #checkout .checkout__flex .checkout__info span {
-  color: #fff;
-}
-.darkmode #checkout .checkout__flex .checkout__info .cart__value .cart__value__box p {
-  color: #fff;
-}
-.darkmode #checkout .checkout__flex .checkout__info .cart__value .cart__value__box span {
-  color: #fff;
-}
-.darkmode #checkout .checkout__flex .checkout__info .cart__value .cart__value__box:nth-last-child(1) {
-  margin-top: 0.2rem;
-}
-.darkmode #checkout .checkout__flex .checkout__info .cart__value .cart__value__box:nth-last-child(1) p {
-  color: #fff;
-  font-size: 1.2rem;
-}
-.darkmode #checkout .checkout__flex .checkout__info .cart__value .cart__value__box:nth-last-child(1) span {
-  font-size: 1.1rem;
   color: #fff;
 }
 .darkmode #checkout .checkout__flex .checkout__info .checkout__product .product__info .product-title {
   color: rgb(226, 13, 13);
+}
+.darkmode .button__desktop {
+  background-color: rgb(226, 13, 13);
+  color: #fff;
+}
+.darkmode .button__desktop:hover {
+  opacity: 0.9;
+}
+.darkmode #payment .payment__title {
+  color: #fff;
+}
+.darkmode #payment .payment__flex .payment__info .payment__top span {
+  color: #fff;
+}
+.darkmode #payment .payment__flex .payment__info .checkout__show .checkout__details {
+  color: #fff;
+}
+.darkmode #payment .payment__flex .checkout__info span {
+  color: #fff;
 }
 
 .form__input {
@@ -849,6 +863,7 @@ footer .copyright p {
 #checkout .checkout__flex .form__container form {
   margin-inline: 0.5rem;
   margin-top: 1rem;
+  margin-bottom: 1rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -865,11 +880,6 @@ footer .copyright p {
   padding-top: 1.2rem;
   display: flex;
   flex-direction: column;
-}
-#checkout .checkout__flex .checkout__info span {
-  color: #000000;
-  font-weight: 700;
-  font-size: 1.1rem;
 }
 #checkout .checkout__flex .checkout__info span:nth-child(1) {
   margin-bottom: 0.9rem;
@@ -943,8 +953,12 @@ footer .copyright p {
     gap: 1rem;
   }
   #checkout .checkout__flex .form__container {
+    margin-top: 0rem;
     border-bottom: none;
     border-right: 1px solid rgb(172, 172, 172);
+  }
+  #checkout .checkout__flex .form__container .checkout__top {
+    margin-top: 0.9rem;
   }
   #checkout .checkout__flex .form__container form {
     margin-inline: 15px;
@@ -958,7 +972,7 @@ footer .copyright p {
     display: block;
   }
   #checkout .checkout__flex .checkout__info {
-    width: 100%;
+    width: 80%;
   }
   #checkout .checkout__flex .checkout__info .cart__value {
     padding-bottom: 0.5rem;
@@ -1003,7 +1017,7 @@ footer .copyright p {
   padding-bottom: 1.1rem;
 }
 #payment .payment__flex .payment__info .payment__top a {
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: grey;
   font-weight: 700;
   text-decoration: underline;
@@ -1032,7 +1046,6 @@ footer .copyright p {
 }
 #payment .payment__flex .payment__info .payment__form form {
   margin-inline: 15px;
-  margin-bottom: 1rem;
 }
 #payment .payment__flex .payment__info .payment__form form .form__input {
   margin-block: 0.9rem;
@@ -1045,10 +1058,9 @@ footer .copyright p {
 #payment .payment__flex .payment__info .payment__form form .button__desktop {
   display: none;
 }
-#payment .payment__flex .checkout__info span:nth-child(1) {
-  font-size: 1.05rem;
-  color: #000000;
-  font-weight: 700;
+#payment .payment__flex .checkout__info {
+  margin-inline: 12px;
+  padding-top: 1.2rem;
 }
 #payment .payment__flex .checkout__info .cart__value {
   margin-top: 0.7rem;
@@ -1059,19 +1071,29 @@ footer .copyright p {
     max-width: 1300px;
     margin-inline: auto;
   }
+  #payment .payment__top {
+    margin-left: 0.7rem;
+  }
   #payment .payment__flex {
     flex-direction: row;
     justify-content: space-between;
     gap: 1rem;
   }
+  #payment .payment__flex .checkout__show {
+    margin-left: 1rem;
+  }
   #payment .payment__flex .payment__info {
     border-right: 1px solid rgb(172, 172, 172);
     margin-top: 0rem;
+    margin-inline: 0px;
     width: 100%;
   }
   #payment .payment__flex .payment__info .payment__top {
     margin-top: 0.9rem;
     margin-right: 0.9rem;
+  }
+  #payment .payment__flex .payment__info .payment__form form {
+    margin-top: 1rem;
   }
   #payment .payment__flex .payment__info .payment__form form .form__col-2 {
     flex-wrap: nowrap;
@@ -1079,9 +1101,14 @@ footer .copyright p {
   }
   #payment .payment__flex .payment__info .payment__form form .button__desktop {
     display: block;
+    margin-top: 2rem;
   }
   #payment .payment__flex .checkout__info {
-    width: 70%;
+    width: 80%;
+    margin-inline: 0;
+  }
+  #payment .payment__flex .checkout__info .cart__value {
+    padding-bottom: 0.5rem;
   }
 }
 

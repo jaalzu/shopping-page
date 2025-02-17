@@ -37,6 +37,7 @@
                 form{
             margin-inline: .5rem;
              margin-top: 1rem;
+             margin-bottom: 1rem;
             display: flex;
             flex-direction: column;
             gap: 1rem;
@@ -62,10 +63,6 @@
             flex-direction: column;
 
             span{
-                color: vars.$secondary-color;
-                font-weight: vars.$fw-bold;
-                font-size: 1.1rem;
-
                  &:nth-child(1){
                     margin-bottom: .9rem;
                  }
@@ -155,8 +152,16 @@
             justify-content: space-between;
             gap: 1rem;
             .form__container{
+                margin-top: 0rem;
                 border-bottom: none;
                 border-right: 1px solid vars.$light-grey-color;
+
+                    .checkout__top{
+                        margin-top: .9rem;
+
+                    }
+                
+                
                 form{
                     margin-inline: 15px;
                     margin-top: 1rem;
@@ -173,7 +178,7 @@
 
             }
             .checkout__info{
-                width: 100%;
+                width: 80%;
 
                 .cart__value{
                     padding-bottom: .5rem;

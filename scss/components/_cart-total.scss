@@ -1,6 +1,12 @@
 @use '../utils/variables' as vars;
 @use '../utils/mixins' as mixin;
 
+
+.order__summary__text{
+    font-weight: vars.$fw-bold;
+    font-size: 1.1rem;
+}
+
 .cart__value{
     margin-inline: 8px;
     padding-bottom: 1rem;
@@ -13,7 +19,7 @@
 
     p{
         color: vars.$grey-color;
-            font-weight: 700;
+        font-weight: vars.$fw-bold;
             font-size: 1rem;
     }
 
@@ -39,4 +45,24 @@
         margin: .230rem;
     }
 }
+}
+
+
+.darkmode{
+    .cart__value{
+        .cart__value__box{
+            .cart-total,.cart__total{
+                font-weight: vars.$fw-bold;
+                }         
+        span,p{
+            font-weight: 400;
+            color: vars.$white-color;
+        }
+            &:nth-last-child(1){
+                p{
+                    font-weight: vars.$fw-bold;
+                }
+            }
+        }
+    }
 }

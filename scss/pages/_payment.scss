@@ -12,6 +12,7 @@
         font-weight: vars.$fw-bold;
         margin-left: .7rem;
         }
+        
 
         .payment__flex{
             margin-top: .6rem;
@@ -30,7 +31,7 @@
                     align-items: center;
                     padding-bottom: 1.1rem;
                     a{
-                        font-size: 1rem;
+                        font-size: 1.1rem;
                         color: vars.$grey-color;
                         font-weight: vars.$fw-bold;
                         text-decoration: underline;
@@ -47,7 +48,6 @@
                     align-items: center;
                     padding-top: .8rem;
                     margin-bottom: 2.5rem;
-
                     .checkout__details{
                         display: flex;
                         flex-direction: column;
@@ -64,7 +64,6 @@
 
                     form{
                         margin-inline: 15px;
-                        margin-bottom: 1rem;
                         .form__input{
                             margin-block: .9rem;
                         }
@@ -83,13 +82,8 @@
             }
 
             .checkout__info{
-                span{
-                    &:nth-child(1){
-                        font-size: 1.050rem;
-                        color: vars.$secondary-color;
-                        font-weight: vars.$fw-bold;
-                    }
-                }
+                margin-inline: 12px;
+                padding-top: 1.2rem;
                 .cart__value{
                     margin-top: .7rem;
                 }
@@ -99,18 +93,25 @@
 
 
 @include mixin.responsive(tablet){
-
-    
     #payment{
         max-width: 1300px;
         margin-inline: auto;
+
+        .payment__top{
+            margin-left: .7rem;
+            }
         .payment__flex{
             flex-direction: row;
             justify-content: space-between;
             gap: 1rem;
+
+            .checkout__show{
+                margin-left: 1rem;
+            }
             .payment__info{
                 border-right: 1px solid vars.$light-grey-color;
                 margin-top: 0rem;
+                margin-inline: 0px;
                 width: 100%;
                 .payment__top{
                     margin-top: .9rem;
@@ -118,7 +119,7 @@
                 }
                 .payment__form{
                     form{
-                        
+                    margin-top: 1rem;
                         .form__col-2{
                             flex-wrap: nowrap;
                             gap: 2rem;
@@ -126,13 +127,18 @@
                         }
                         .button__desktop{
                             display: block;
+                            margin-top: 2rem;
                         }
                     }
                 }
             }
 
             .checkout__info{
-                width: 70%;
+                width: 80%;
+                margin-inline: 0;
+                .cart__value{
+                    padding-bottom: .5rem;
+                }
             }
         }
     }

@@ -37,6 +37,12 @@
 }
 
 
+
+
+
+
+
+
     // PRODUCTS SECTION IN INDEX 
 
     .products{
@@ -52,6 +58,7 @@
             }
         }
     }
+
 
 
 
@@ -71,6 +78,12 @@ footer{
         }
     }
 }
+
+
+
+
+
+
 
 
 
@@ -132,6 +145,11 @@ footer{
         color: vars.$primary-color;
     }
 }
+
+
+
+
+
 
 
 
@@ -201,6 +219,14 @@ footer{
 }
 
 
+
+
+
+
+
+
+
+
 // checkout page //
 
 #checkout{
@@ -214,44 +240,21 @@ footer{
             }
 
             form{
-                .button__desktop{
-                    background-color: vars.$red-color;
-                    color: vars.$white-color;
-                }
+                // .button__desktop{
+                //     background-color: vars.$red-color;
+                //     color: vars.$white-color;
+
+                //     &:hover{
+                //         opacity: .9;
+                //     }
+                // }
             }
         }
 
         .checkout__info{
-
             span{
                 color: vars.$white-color;
             }
-            .cart__value{
-                .cart__value__box{
-                    p{
-                   color: vars.$white-color;
-                    }
-                    span{
-                        color: vars.$white-color;
-                    }
-
-                    &:nth-last-child(1){
-                        margin-top: .2rem;
-                        p{
-                            color: vars.$white-color;
-
-                            font-size: 1.2rem;
-                        }
-                        span{
-                            font-size: 1.1rem;
-                            color: vars.$white-color;
-
-                        }
-                    }
-                }
-            }
-
-
             .checkout__product{
                 .product__info{
                     .product-title{
@@ -264,4 +267,67 @@ footer{
 
     }
 }
+
+
+
+
+
+
+// send form button in desktop from checkout page and payment page
+
+.button__desktop{
+    background-color: vars.$red-color;
+    color: vars.$white-color;
+
+    &:hover{
+        opacity: .9;
+    }
+}
+
+
+
+
+
+
+// payment page start // 
+
+#payment{
+    .payment__title{
+        color: vars.$white-color;
+    }
+
+    .payment__flex{
+        .payment__info{
+            .payment__top{
+               span{
+                color: vars.$white-color;
+               }
+            }
+
+            .checkout__show{
+                .checkout__details{
+                    color: vars.$white-color;
+                }
+            }
+        }
+
+        .checkout__info{
+            span{
+                color: vars.$white-color;
+            }
+    }
+
+    // .button__desktop{
+    //     background-color: vars.$red-color;
+    //     color: vars.$white-color;
+
+    //     &:hover{
+    //         opacity: .9;
+    //     }
+    // }
+
+    }
+}
+
+
 }
