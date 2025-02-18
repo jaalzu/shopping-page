@@ -33,7 +33,7 @@
                 width: 100%;
                 img{
                     width: 204px;
-                    
+                    transition: .2s ease;
                     &:hover{
                         transform: scale(1.1);
                     }

@@ -561,6 +561,7 @@ footer .copyright p {
 }
 .products .products__grid .product__card .product__img img {
   width: 204px;
+  transition: 0.2s ease;
 }
 .products .products__grid .product__card .product__img img:hover {
   transform: scale(1.1);
