@@ -328,6 +328,7 @@ input:focus, select:focus {
   .hero {
     flex-direction: row;
     padding-top: 5rem;
+    gap: 1rem;
   }
   .hero .hero__img img {
     width: 300px;
