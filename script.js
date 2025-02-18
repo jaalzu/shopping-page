@@ -136,7 +136,7 @@ function renderCart() {
     if (!cartContainer || !cartTotalContainer) return;
 
     if (carrito.length === 0) {
-        cartContainer.innerHTML = '<p style="color:red; margin-top: 0.7rem; text-align: center; font-size: 1rem; ;">Tu carrito está vacío</p>';
+        cartContainer.innerHTML = '<p style="color:#e20d0d; margin-top: .9rem; text-align: center; font-size: 1rem; ;">Tu carrito está vacío</p>';
         cartTotalContainer.style.display = "none"; // Oculta la sección de total y botones
     } else {
         cartContainer.innerHTML = carrito.map((producto, index) => `
@@ -182,6 +182,7 @@ function renderCart() {
             carrito.splice(0,carrito.length)
             cartContainer.innerHTML = '';
             cartTotalContainer.style.display = "none"; // Oculta la sección de total y botones
+            cartContainer.innerHTML = '<p style="color:#e20d0d; margin-top: .9rem; text-align: center; font-size: 1rem; ;">Tu carrito está vacío</p>';
 
             guardarCarrito();
             actualizarTotal();

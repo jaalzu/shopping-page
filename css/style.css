@@ -93,7 +93,7 @@ p, a, span, input, label, select, button {
 .cart__value {
   margin-inline: 8px;
   padding-bottom: 1rem;
-  border-bottom: 1px solid rgb(172, 172, 172);
+  border-bottom: 1px solid #acacac;
 }
 .cart__value .cart__value__box {
   align-items: center;
@@ -169,7 +169,7 @@ p, a, span, input, label, select, button {
   color: #fff;
 }
 .darkmode .showcase .showcase__flex .showcase__img .showcase__buttons .activeBtn {
-  color: rgb(226, 13, 13);
+  color: #e20d0d;
 }
 .darkmode .showcase .showcase__flex .showcase__description .showcase__title h2 {
   color: #cacaca;
@@ -179,10 +179,10 @@ p, a, span, input, label, select, button {
 }
 .darkmode .showcase .showcase__flex .showcase__button .button {
   color: #fff;
-  border: 4px dotted rgb(226, 13, 13);
+  border: 4px dotted #e20d0d;
 }
 .darkmode .showcase .showcase__flex .showcase__button .button:hover {
-  background-color: rgb(226, 13, 13);
+  background-color: #e20d0d;
 }
 .darkmode .showcase .showcase__details h3 {
   color: #cacaca;
@@ -200,10 +200,10 @@ p, a, span, input, label, select, button {
   border-top: 1px solid grey;
 }
 .darkmode .cart .cart__flex .cart__container {
-  border-bottom: 1px solid rgb(172, 172, 172);
+  border-bottom: 1px solid #acacac;
 }
 .darkmode .cart .cart__flex .cart__container .cart__title h3 {
-  color: rgb(226, 13, 13);
+  color: #e20d0d;
 }
 .darkmode .cart .cart__flex .cart__container .cart__title .close__btn img {
   filter: invert(1);
@@ -218,7 +218,7 @@ p, a, span, input, label, select, button {
   color: #fff;
 }
 .darkmode .cart .cart__button a:nth-child(1) {
-  background-color: rgb(226, 13, 13);
+  background-color: #e20d0d;
   border: none;
 }
 .darkmode .cart .cart__button a {
@@ -234,10 +234,10 @@ p, a, span, input, label, select, button {
   color: #fff;
 }
 .darkmode #checkout .checkout__flex .checkout__info .checkout__product .product__info .product-title {
-  color: rgb(226, 13, 13);
+  color: #e20d0d;
 }
 .darkmode .button__desktop {
-  background-color: rgb(226, 13, 13);
+  background-color: #e20d0d;
   color: #fff;
 }
 .darkmode .button__desktop:hover {
@@ -285,7 +285,7 @@ input:focus, select:focus {
 }
 
 .custom-button {
-  background-color: rgb(226, 13, 13) !important;
+  background-color: #e20d0d !important;
   color: #fff !important;
   border-radius: 3px !important;
   font-size: 18px !important;
@@ -721,21 +721,21 @@ footer .copyright p {
 }
 .cart .cart__top span {
   cursor: pointer;
-  color: rgb(226, 13, 13);
+  color: #e20d0d;
   text-decoration: underline;
 }
 .cart .cart__flex {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  border-top: 1px solid rgb(172, 172, 172);
+  border-top: 1px solid #acacac;
 }
 .cart .cart__flex .cart__container {
   padding-bottom: 1rem;
   position: relative;
   display: flex;
   flex-direction: column;
-  border-bottom: 1px solid rgb(172, 172, 172);
+  border-bottom: 1px solid #acacac;
 }
 .cart .cart__flex .cart__container .cart__title {
   padding-bottom: 1rem;
@@ -819,7 +819,7 @@ footer .copyright p {
     padding-bottom: 1.3rem;
   }
   .cart .cart__flex {
-    border-top: 1px solid rgb(172, 172, 172);
+    border-top: 1px solid #acacac;
     flex-direction: row;
     width: 100%;
     gap: 3rem;
@@ -874,10 +874,10 @@ footer .copyright p {
   margin-top: 0.6rem;
   display: flex;
   flex-direction: column;
-  border-top: 1px solid rgb(172, 172, 172);
+  border-top: 1px solid #acacac;
 }
 #checkout .checkout__flex .form__container {
-  border-bottom: 1px solid rgb(172, 172, 172);
+  border-bottom: 1px solid #acacac;
   padding-bottom: 2rem;
   width: 100%;
   margin-top: 0.9rem;
@@ -927,7 +927,7 @@ footer .copyright p {
   align-items: flex-start;
   padding-bottom: 0.7rem;
   flex-direction: column;
-  border-bottom: 1px solid rgb(172, 172, 172);
+  border-bottom: 1px solid #acacac;
 }
 #checkout .checkout__flex .checkout__info .checkout__product .product__info:nth-last-child(1) {
   border-bottom: none;
@@ -983,7 +983,7 @@ footer .copyright p {
   #checkout .checkout__flex .form__container {
     margin-top: 0rem;
     border-bottom: none;
-    border-right: 1px solid rgb(172, 172, 172);
+    border-right: 1px solid #acacac;
   }
   #checkout .checkout__flex .form__container .checkout__top {
     margin-top: 0.9rem;
@@ -1031,7 +1031,7 @@ footer .copyright p {
   margin-top: 0.6rem;
   display: flex;
   flex-direction: column;
-  border-top: 1px solid rgb(172, 172, 172);
+  border-top: 1px solid #acacac;
 }
 #payment .payment__flex .payment__info {
   margin-inline: 10px;
@@ -1080,7 +1080,7 @@ footer .copyright p {
   position: relative;
 }
 #payment .payment__flex .payment__info .payment__form form .form__input .error-message {
-  color: rgb(226, 13, 13);
+  color: #e20d0d;
   font-size: 0.875rem;
   margin-top: 5px;
   display: none;
@@ -1128,7 +1128,7 @@ footer .copyright p {
     margin-left: 1rem;
   }
   #payment .payment__flex .payment__info {
-    border-right: 1px solid rgb(172, 172, 172);
+    border-right: 1px solid #acacac;
     margin-top: 0rem;
     margin-inline: 0px;
     width: 100%;
