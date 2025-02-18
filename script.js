@@ -25,21 +25,21 @@ themeStich.addEventListener("click",() => {
 // array de productos 
 const productos = [
     {
-        id: 1,
+        slug: "t-shirt-shit-off",  
         nombre: "t-shirt shit-off",
         imagenes: ["../public/images/products/t-shirt-1.webp","../public/images/products/t-shirt-1-back.webp"] ,
         precio: 37000,
         caracteristicas: ["100% cotton", "1/1 piece", "made in france"]
     },
     {
-        id: 2,
+        slug: "t-shirt-beamer",
         nombre: "t-shirt beamer",
         imagenes: [ "../public/images/products/t-shirt-2.webp", "../public/images/products/t-shirt-2-back.webp"] ,
         precio: 32000,
         caracteristicas: ["100% cotton", "1/1 piece", "made in france"]
     },
     {
-        id: 3,
+        slug: "jacket-casablanca",
         nombre: "jacket casablanca",
         imagenes: [
             "../public/images/products/jacket-1.webp",
@@ -49,7 +49,7 @@ const productos = [
         caracteristicas: ["100% cotton", "1/1 piece", "made in france"]
     },
     {
-        id: 4,
+        slug: "t-shirt-anti-social",
         nombre: "t-shirt anti social",
         imagenes: [
             "../public/images/products/t-shirt-3.webp",
@@ -59,7 +59,7 @@ const productos = [
         caracteristicas: ["100% cotton", "1/1 piece", "made in france"]
     },
     {
-        id: 5,
+        slug: "jean-trasher",
         nombre: "jean trasher",
         imagenes: [
             "../public/images/products/jean.webp",
@@ -69,7 +69,7 @@ const productos = [
         caracteristicas: ["100% cotton", "1/1 piece", "made in france"]
     },
     {
-        id: 6,
+        slug: "jacket-off-white",
         nombre: "jacket off-white",
         imagenes: [
             "../public/images/products/jacket-2.webp",
@@ -79,7 +79,7 @@ const productos = [
         caracteristicas: ["100% cotton", "1/1 piece", "made in france"]
     },
     {
-        id: 7,
+        slug: "t-shirt-chelsea",
         nombre: "t-shirt chelsea",
         imagenes: [
             "../public/images/products/t-shirt-4.webp",
@@ -214,8 +214,8 @@ function renderCart() {
 // Función para inicializar la página de productos
 function inicializarPaginaProducto() {
     const urlParams = new URLSearchParams(window.location.search);
-    const productoId = parseInt(urlParams.get('id'));
-    const producto = productos.find(p => p.id === productoId);
+    const productoSlug = urlParams.get('product');
+    const producto = productos.find(p => p.slug === productoSlug);
 
     if (!producto) {
         console.log("Producto no encontrado.");
@@ -236,7 +236,7 @@ function inicializarPaginaProducto() {
 
         addToCartBtn.addEventListener('click', (e) => {
             e.preventDefault();
-            const existingProductIndex = carrito.findIndex(p => p.id === producto.id);
+            const existingProductIndex = carrito.findIndex(p => p.slug === producto.slug);
 
             if (existingProductIndex !== -1) {
                 carrito[existingProductIndex].cantidad += 1;
@@ -348,7 +348,7 @@ class Carrito {
     }
 
     agregarProducto(producto) {
-        const index = this.carrito.findIndex(item => item.id === producto.id);
+        const index = this.carrito.findIndex(item => item.slug === producto.slug);
         if (index !== -1) {
             this.carrito[index].cantidad += 1;
         } else {
@@ -357,8 +357,8 @@ class Carrito {
         this.guardarCarrito();
     }
 
-    eliminarProducto(id) {
-        this.carrito = this.carrito.filter(item => item.id !== id);
+    eliminarProducto(slug) {
+        this.carrito = this.carrito.filter(item => item.slug !== slug);
         this.guardarCarrito();
     }
 
