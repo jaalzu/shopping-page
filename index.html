@@ -4,27 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="css/style.css">
+
+     <!-- Meta etiquetas -->
+
+     <meta name="description" content="Starshopping is a luxury online store blending dark and elegant designs, featuring premium materials and timeless fashion. Perfect for the bold..">
+     <meta name="keywords" content="luxury fashion, exclusive clothes, dark apparel, premium materials, edgy fashion, designer clothes">
+     <meta name="author" content="Javier Alzu">
+     <link rel="canonical" href="https://jaalzu.github.io/shopping-page/">
+
+      <!-- Open Graph  -->
+    <meta property="og:title" content="JAVALZU | Starshopping">
+    <meta property="og:description" content="Starshopping is an online store where dark meets luxury. Crafted for the bold, our pieces blend meticulous details and premium materials. Each design is a timeless, edgy statement, unmistakably unique, for those who wear their truth without apology.">
+    <meta property="og:image" content="https://jaalzu.github.io/shopping-page/public/imagenes/og-image.png">
+    <meta property="og:url" content="https://jaalzu.github.io/shopping-page/">
+    <meta property="og:type" content="website">
+
+
+
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
 
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="public/images/home_section/home-img.webp" type="image/x-icon">
 
 </head>
 <body>
 
 <header class="header" id="header">
     <nav class="nav">
-        <a href="" class="logo primary-font">starshopping</a>
+        <a href="index.html" class="logo primary-font">starshopping</a>
         <div class="nav__menu">
-           <button id="theme-switch">
-            <img src="public/images/icons/dark_mode_24dp_D9D9D9_FILL0_wght400_GRAD0_opsz24.svg"  alt="dark mode">
-            <img src="public/images/icons/light_mode_24dp_D9D9D9_FILL0_wght400_GRAD0_opsz24.svg"   alt="light mode">
+           <button id="theme-switch" aria-label="Cambiar tema oscuro/claro">
+            <img src="public/images/icons/dark_mode_24dp_D9D9D9_FILL0_wght400_GRAD0_opsz24.svg"  alt="dark mode icon">
+            <img src="public/images/icons/light_mode_24dp_D9D9D9_FILL0_wght400_GRAD0_opsz24.svg"   alt="light mode icon">
            </button>
             <a href="./pages/cart.html" class="icon__nav" id="cart-shopping"><img src="public/images/icons/bag-shopping-solid.svg" alt=""><p class="cart__shopping__amount" id="cart-shopping-amount"></p></a>
-            
-           
         </div>
 
     </nav>
@@ -32,7 +48,7 @@
 
     <section class="hero">
         <div class="hero__img">
-            <img src="public/images/home_section/home-img.webp" alt="">
+            <img src="public/images/home_section/home-img.webp" alt="imagen del hero">
         </div>
         <div class="hero__description">
             <p><span class="primary-font">starshopping</span>- Where dark  meets luxury. Crafted for the bold, our pieces blend meticulous details and premium materials .
@@ -48,16 +64,16 @@
     <div class="products__grid">
         <div class="product__card">
             <div class="product__img">
-                <a href="./pages/product-show.html?id=1">
+                <a href="./pages/product-show.html?id=1" aria-label="Ver detalles del producto T-shirt Shitoff">
                     <img src="public/images/products/t-shirt-1.webp" alt="t-shirt shitoff" loading="lazy">
                 </a>
             </div>
             <div class="product__description">
-                <span class="primary-font">
+                <h3>
                     t-shirt shitoff
-                </span>
+                </h3>
                 <p class="product__price">
-                    <p>$37.000</p>
+                    $37.000
                 </p>
                 
             </div>
@@ -65,17 +81,17 @@
 
         <div class="product__card">
             <div class="product__img">
-                <a href="./pages/product-show.html?id=2">
-                    <img src="public/images/products/t-shirt-2.webp" alt="">
+                <a href="./pages/product-show.html?id=2" aria-label="Ver detalles del producto T-shirt beamer">
+                    <img src="public/images/products/t-shirt-2.webp" alt="t-shirt beamer" loading="lazy">
                 </a>
 
             </div>
             <div class="product__description">
-                <span class="primary-font">
+                <h3 >
                     t-shirt beamer
-                </span>
+                </h3>
                 <p class="product__price">
-                    <p>$32.000</p>
+                    $32.000
                 </p>
                 
             </div>
@@ -83,17 +99,16 @@
 
         <div class="product__card">
             <div class="product__img">
-                <a href="./pages/product-show.html?id=3">
-                    <img src="public/images/products/jacket-1.webp" alt="">
+                <a href="./pages/product-show.html?id=3" aria-label="Ver detalles del producto jacket casablanca">
+                    <img src="public/images/products/jacket-1.webp" alt="jacket casablanca" loading="lazy">
                 </a>
-
             </div>
             <div class="product__description">
-                <span class="primary-font">
+                <h3>
                     jacket casablanca
-                </span>
+                </h3>
                 <p class="product__price">
-                    <p>$107.000</p>
+                    $107.000
                 </p>
                 
             </div>
@@ -101,65 +116,64 @@
 
         <div class="product__card">
             <div class="product__img">
-                <a href="./pages/product-show.html?id=4">
-                    <img src="public/images/products/t-shirt-3.webp" alt="">
+                <a href="./pages/product-show.html?id=4" aria-label="Ver detalles del producto t-shirt anti social">
+                    <img src="public/images/products/t-shirt-3.webp" alt="t-shirt anti social" loading="lazy">
                 </a>
             </div>
             <div class="product__description">
-                <span class="primary-font">
+                <h3 >
                     t-shirt anti social
-                </span>
+                </h3>
                 <p class="product__price">
-                    <p>$47.000</p>
+                    $47.000
                 </p>
-                
             </div>
         </div>
 
         <div class="product__card">
             <div class="product__img">
-                <a href="./pages/product-show.html?id=5">
-                    <img src="public/images/products/jean.webp" alt="">
+                <a href="./pages/product-show.html?id=5" aria-label="Ver detalles del producto jean trasher">
+                    <img src="public/images/products/jean.webp" alt="jean trasher" loading="lazy">
                 </a>
             </div>
             <div class="product__description">
-                <span class="primary-font">
+                <h3>
                     jean trasher
-                </span>
+                </h3>
                 <p class="product__price">
-                    <p>$87.000</p>
+                    $87.000
                 </p>
             </div>
         </div>
 
         <div class="product__card">
             <div class="product__img">
-                <a href="./pages/product-show.html?id=6">
-                    <img src="public/images/products/jacket-2.webp" alt="">
+                <a href="./pages/product-show.html?id=6" aria-label="Ver detalles del producto jacket off-white">
+                    <img src="public/images/products/jacket-2.webp" alt="jacket off-white" loading="lazy">
                 </a>
             </div>
             <div class="product__description">
-                <span class="primary-font">
+                <h3>
                     jacket off-white
-                </span>
+                </h3>
                 <p class="product__price">
-                    <p>$120.000</p>
+                   $120.000
                 </p>
             </div>
         </div>
 
         <div class="product__card">
             <div class="product__img">
-                <a href="./pages/product-show.html?id=7">
-                    <img src="public/images/products/t-shirt-4.webp" alt="">
+                <a href="./pages/product-show.html?id=7" aria-label="Ver detalles del producto t-shirt chelsea">
+                    <img src="public/images/products/t-shirt-4.webp" alt="t-shirt chelsea" loading="lazy">
                 </a>
             </div>
             <div class="product__description">
-                <span class="primary-font">
+                <h3>
                     t-shirt chelsea
-                </span>
+                </h3>
                 <p class="product__price">
-                    <p>$50.000</p>
+                    $50.000
                 </p>
             </div>
         </div>

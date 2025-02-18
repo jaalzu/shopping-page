@@ -309,6 +309,7 @@ input:focus, select:focus {
   text-align: center;
 }
 .hero .hero__img img {
+  aspect-ratio: 1/1;
   width: 253px;
   height: auto;
 }
@@ -570,18 +571,15 @@ footer .copyright p {
   align-items: center;
   flex-direction: column;
   color: #000000;
+  margin-bottom: 1.7rem;
 }
-.products .products__grid .product__card .product__description span {
-  font-size: 1.5rem;
+.products .products__grid .product__card .product__description h3 {
+  font-size: 1.7rem;
   font-weight: 700;
 }
 .products .products__grid .product__card .product__description p {
+  margin-top: 0.7rem;
   font-size: 1.1rem;
-  margin-bottom: 1.1rem;
-}
-.products .products__grid .product__card .product__description a {
-  margin-bottom: 1.7rem;
-  font-weight: 700;
 }
 
 @media (min-width: 634px) {

@@ -43,18 +43,17 @@
                 @include mixin.flex-center();
                 flex-direction: column;
                 color: vars.$secondary-color;
-                span{
-                    font-size: 1.5rem;
+                margin-bottom: 1.7rem;
+
+                h3{
+                    font-size: 1.7rem;
                     font-weight: vars.$fw-bold;
                 }
                 p{
+                    margin-top: .7rem;
                     font-size: 1.1rem;
-                    margin-bottom: 1.1rem;
                 }
-                a{
-                    margin-bottom: 1.7rem;
-                    font-weight: vars.$fw-bold;
-                }
+                
             }
         }
     }
