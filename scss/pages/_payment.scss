@@ -6,6 +6,8 @@
     padding-bottom: 5rem;
     padding-inline: vars.$padding-inline-checkout-page-mobile;
 
+   
+
     .payment__title{
         font-size: 1.3rem;
         color: vars.$secondary-color;
@@ -66,6 +68,18 @@
                         margin-inline: 15px;
                         .form__input{
                             margin-block: .9rem;
+                            position: relative;
+
+                            .error-message {
+                                color: vars.$red-color;
+                                font-size: 0.875rem;
+                                margin-top: 5px;
+                                display: none;
+                            }
+                            
+                            .error-message.active {
+                                display: block;
+                            }
                         }
                        
                         .form__col-2 {

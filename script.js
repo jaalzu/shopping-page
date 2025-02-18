@@ -431,3 +431,140 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log('No hay datos en localStorage');
     }
 });
+
+
+
+
+
+// Función para validar el formulario
+function validateForm() {
+    let isValid = true;
+
+    // Validar email
+    const email = document.getElementById('email').value;
+    const emailError = document.getElementById('email-error');
+    if (!validateEmail(email)) {
+        emailError.textContent = "Ingrese un email válido.";
+        emailError.classList.add('active');
+        isValid = false;
+    } else {
+        emailError.textContent = "";
+        emailError.classList.remove('active');
+    }
+
+    // Validar número de tarjeta
+    const cardNumber = document.getElementById('card-number').value.replace(/\s/g, '');
+    const cardNumberError = document.getElementById('card-number-error');
+    if (!validateCardNumber(cardNumber)) {
+        cardNumberError.textContent = "El número de tarjeta debe tener 16 dígitos.";
+        cardNumberError.classList.add('active');
+        isValid = false;
+    } else {
+        cardNumberError.textContent = "";
+        cardNumberError.classList.remove('active');
+    }
+
+    // Validar fecha de expiración
+    const cardDate = document.getElementById('card-date').value;
+    const cardDateError = document.getElementById('card-date-error');
+    if (!validateExpiryDate(cardDate)) {
+        cardDateError.textContent = "La fecha de expiración debe ser mayor a la fecha actual.";
+        cardDateError.classList.add('active');
+        isValid = false;
+    } else {
+        cardDateError.textContent = "";
+        cardDateError.classList.remove('active');
+    }
+
+    // Validar código de seguridad
+    const securityCode = document.getElementById('security-code').value;
+    const securityCodeError = document.getElementById('security-code-error');
+    if (!validateSecurityCode(securityCode)) {
+        securityCodeError.textContent = "El código de seguridad debe tener 3 dígitos.";
+        securityCodeError.classList.add('active');
+        isValid = false;
+    } else {
+        securityCodeError.textContent = "";
+        securityCodeError.classList.remove('active');
+    }
+
+    // Validar nombre
+    const nameCard = document.getElementById('name-card').value;
+    const nameCardError = document.getElementById('name-card-error');
+    if (!validateName(nameCard)) {
+        nameCardError.textContent = "El nombre solo debe contener letras.";
+        nameCardError.classList.add('active');
+        isValid = false;
+    } else {
+        nameCardError.textContent = "";
+        nameCardError.classList.remove('active');
+    }
+
+    // Si todo es válido, mostrar SweetAlert y enviar el formulario
+    if (isValid) {
+        Swal.fire({
+            title: 'Gracias por elegirnos',
+            text: '¡Tu compra fue exitosa!',
+            icon: 'success',
+            color:'#fff',
+            background:'#000000',
+            confirmButtonText: 'Cerrar',
+            customClass:{
+                popup:'custom-popup',
+                confirmButton: 'custom-button',
+                timerProgressBar: 'custom-progress-bar' // Clases personalizadas
+            },
+            timer: 15000, // 15 segundos
+            timerProgressBar: true
+        }).then((result) => {
+            if (result.isConfirmed || result.dismiss === Swal.DismissReason.timer) {
+                window.location.href = '../index.html'; // 
+            }
+        });
+    }
+}
+
+// Funciones de validación (las mismas que antes)
+function validateEmail(email) {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+}
+
+function validateCardNumber(cardNumber) {
+    const regex = /^\d{16}$/;
+    return regex.test(cardNumber);
+}
+
+function validateExpiryDate(date) {
+    const currentDate = new Date();
+    const selectedDate = new Date(date);
+    return selectedDate > currentDate;
+}
+
+function validateSecurityCode(code) {
+    const regex = /^\d{3}$/;
+    return regex.test(code);
+}
+
+function validateName(name) {
+    const regex = /^[A-Za-z\s]+$/;
+    return regex.test(name);
+}
+
+// Formatear número de tarjeta
+document.getElementById('card-number').addEventListener('input', function (e) {
+    let value = e.target.value.replace(/\s/g, '');
+    if (value.length > 16) value = value.slice(0, 16);
+    e.target.value = value.replace(/(\d{4})/g, '$1 ').trim();
+});
+
+// Eventos para los botones
+document.getElementById('payment-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    validateForm();
+});
+
+document.getElementById('checkout-btn').addEventListener('click', function (e) {
+    e.preventDefault();
+    validateForm();
+});

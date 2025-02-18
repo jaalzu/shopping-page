@@ -280,6 +280,21 @@ input:focus, select:focus {
   box-shadow: 0 0 2px grey;
 }
 
+.custom-popup {
+  font-family: "Roboto", sans-serif;
+}
+
+.custom-button {
+  background-color: rgb(226, 13, 13) !important;
+  color: #fff !important;
+  border-radius: 3px !important;
+  font-size: 18px !important;
+}
+
+.custom-progress-bar {
+  background-color: #fff;
+}
+
 .hero {
   display: flex;
   flex-direction: column;
@@ -1049,6 +1064,16 @@ footer .copyright p {
 }
 #payment .payment__flex .payment__info .payment__form form .form__input {
   margin-block: 0.9rem;
+  position: relative;
+}
+#payment .payment__flex .payment__info .payment__form form .form__input .error-message {
+  color: rgb(226, 13, 13);
+  font-size: 0.875rem;
+  margin-top: 5px;
+  display: none;
+}
+#payment .payment__flex .payment__info .payment__form form .form__input .error-message.active {
+  display: block;
 }
 #payment .payment__flex .payment__info .payment__form form .form__col-2 {
   display: flex;

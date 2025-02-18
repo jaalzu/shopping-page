@@ -10,6 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 
 </head>
 <body >
@@ -42,29 +43,35 @@
         <div class="checkout__show" id="checkout-show">
         </div>
         <div class="payment__form">
-            <form action="">
+            <form id="payment-form" action="">
                 <div class="form__input">
                     <label for="email">Email</label>
                     <input type="email" id="email" placeholder="example@example.com" required>
+                    <span class="error-message" id="email-error"></span>
                 </div>
-                <div class="form__input ">
+                <div class="form__input">
                     <label for="card-number">Card number</label>
-                    <input type="number" id="card-number" placeholder="1234 5678 9012 3456" required>
-                    <div class="form__col-2">
-                        <div class="form__input">
-                            <label for="card-date">Expiry date</label>
-                            <input type="month" id="date" placeholder="MM/YY" required>
-                        </div>
-                        <div class="form__input">
-                            <label for="card-code">Security code</label>
-                            <input type="number" id="security-date" placeholder="3 digits" required>
-                        </div>
+                    <input type="text" id="card-number" placeholder="1234 5678 9012 3456" required maxlength="19">
+                    <span class="error-message" id="card-number-error"></span>
+                </div>
+                <div class="form__col-2">
+                    <div class="form__input">
+                        <label for="card-date">Expiry date</label>
+                        <input type="month" id="card-date" required>
+                        <span class="error-message" id="card-date-error"></span>
                     </div>
-
+                    <div class="form__input">
+                        <label for="security-code">Security code</label>
+                        <input type="number" id="security-code" placeholder="3 digits" required maxlength="3">
+                        <span class="error-message" id="security-code-error"></span>
+                    </div>
+                </div>
+                <div class="form__input">
                     <label for="name-card">Name on card</label>
                     <input type="text" id="name-card" placeholder="Jon Jones" required>
+                    <span class="error-message" id="name-card-error"></span>
                 </div>
-                <button class="button primary__button button__desktop checkout__button">PURCHASE</button>
+                <button type="submit" class="button primary__button button__desktop checkout__button">PURCHASE</button>
             </form>
         </div>
     </div>
@@ -99,7 +106,7 @@
 </div>
 
 
-
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script src="../script.js"></script>
 </body>
