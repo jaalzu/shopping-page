@@ -6,11 +6,21 @@
     margin-bottom: 3rem;
     padding-top: 3rem;
 
-    h2{
-        font-size: 1.2rem;
-        font-family: vars.$ff-secondary;
-        color: vars.$secondary-color;
+    .cart__top{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         padding-bottom: 1rem;
+        h2{
+            font-size: 1.240rem;
+            font-family: vars.$ff-secondary;
+            color: vars.$secondary-color;
+        }
+        span{
+            cursor: pointer;
+            color: vars.$red-color;
+            text-decoration: underline;
+        }
     }
 
     .cart__flex{
@@ -55,7 +65,7 @@
                 img{
                     filter: drop-shadow(0px 0px 10px rgba(253, 253, 253, 0.3));
                     
-                    width: 85px;
+                    width: 95px;
                 }
             }
             .cart__price{
@@ -148,7 +158,7 @@
             }
             .cart__img{
                 img{
-                    width: 100px;
+                    width: 120px;
                 }
             }
             .cart__price{

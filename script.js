@@ -173,6 +173,21 @@ function renderCart() {
         });
     });
 
+
+    const emptyCart = document.getElementById("empty-cart")
+    emptyCart.addEventListener("click",() => {
+        if(carrito.length === 0) return;
+
+        
+            carrito.splice(0,carrito.length)
+            cartContainer.innerHTML = '';
+            cartTotalContainer.style.display = "none"; // Oculta la sección de total y botones
+
+            guardarCarrito();
+            actualizarTotal();
+            actualizarCantidadCarrito();
+    })
+
     // Eventos para actualizar cantidad
     document.querySelectorAll(".cart-quantity").forEach(input => {
         input.addEventListener("change", (e) => {
