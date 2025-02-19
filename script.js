@@ -5,7 +5,6 @@ const themeStich = document.getElementById('theme-switch');
 const enableDarkMode = () => {
     document.body.classList.add('darkmode');
     localStorage.setItem('darkmode','active');
-
 }
 
 const disableDarkMode = () => {
